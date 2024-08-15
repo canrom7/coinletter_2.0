@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.payeasenet.wepay.ui.viewModel.OpenWalletModel" />
+    </data>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/windowBackground"
+    tools:context=".ui.activity.OpenWalletActivity">
+
+    <include layout="@layout/toolbar"/>
+
+
+    <RelativeLayout
+        android:id="@+id/mark"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/prompting"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:text=" 请输入需要开通钱包账户的用户信息"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:id="@+id/rl_name"
+        app:layout_constraintTop_toBottomOf="@+id/mark">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="姓名"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionGo"
+            android:text="@={data.name}"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white_line"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1px"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:id="@+id/rl_card"
+        app:layout_constraintTop_toBottomOf="@+id/rl_name">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="身份证号"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionGo"
+            android:digits="@string/digits_id_card"
+            android:maxLength="18"
+            android:maxLines="1"
+            android:text="@={data.idCardNo}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white_line"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1px"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:id="@+id/rl_phone"
+        app:layout_constraintTop_toBottomOf="@+id/rl_card">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="注册手机号"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionGo"
+            android:digits="@string/number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:text="@={data.mobile}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white_line"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1px"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:id="@+id/rl_nick"
+        app:layout_constraintTop_toBottomOf="@+id/rl_phone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="用户昵称"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionGo"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:text="@={data.nickName}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white_line"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1px"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:id="@+id/rl_profession"
+        app:layout_constraintTop_toBottomOf="@+id/rl_nick">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="职业"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:gravity="center_vertical"
+            android:entries="@array/profession"
+            android:id="@+id/spinner"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/add"
+        style="@style/YiLinButtonStyle"
+        android:background="@color/buttonColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_profession"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:alpha="@{TextUtils.isEmpty(data.idCardNo)|| TextUtils.isEmpty(data.name)|| TextUtils.isEmpty(data.mobile)  || TextUtils.isEmpty(data.profession)? 0.3f : 1f}"
+        android:elevation="0dp"
+        android:enabled="@{!(TextUtils.isEmpty(data.idCardNo)|| TextUtils.isEmpty(data.name)|| TextUtils.isEmpty(data.mobile)  || TextUtils.isEmpty(data.profession))}"
+        android:onClick="@{data::sure}"
+        android:text="开通"
+        android:textSize="@dimen/font_32" />
+</android.support.constraint.ConstraintLayout>
+</layout>

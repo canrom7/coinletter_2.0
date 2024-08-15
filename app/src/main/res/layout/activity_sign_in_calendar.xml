@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_sign_in_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/sign_in_calendar_title_bg">
+
+            <RelativeLayout
+                android:id="@+id/iv_last"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="50dp"
+                    android:src="@mipmap/sign_in_red_last" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:id="@+id/iv_next"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50dp"
+                    android:src="@mipmap/sign_in_red_next" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_sign_in_calendar"
+            android:background="@drawable/sign_in_calendar_content_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_sign_in_calendar_continuous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="14dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:text="@string/sign_in_day_count"
+                android:textColor="@color/color_00"
+                android:textSize="15sp" />
+
+            <com.iimm.miliao.view.WeekView
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+            <com.iimm.miliao.view.CalendarView
+                android:id="@+id/calendar"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                app:choose_color="#FF000000"
+                app:choose_type="multi"
+                app:day_bg="@drawable/sign_in_already_bg"
+                app:show_holiday="false"
+                app:show_lunar="false"
+                app:show_term="false"
+                app:today_bg="@drawable/sign_in_today_bg"
+                app:today_color="#FFFFFFFF" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="65dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="100dp"
+                android:background="@mipmap/sign_in_calendar"
+                android:onClick="nextMonth" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="100dp"
+                android:background="@mipmap/sign_in_calendar"
+                android:onClick="nextMonth" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/iv_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/sign_in_calendar_close" />
+    </RelativeLayout>
+</RelativeLayout>

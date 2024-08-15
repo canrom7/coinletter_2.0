@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.payeasenet.wepay.net.bean.ResponseBean.Transaction" />
+    </data>
+
+                <RelativeLayout
+                    android:id="@+id/bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:background="@color/white"
+                   >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/paymentType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/font_26"
+                        tools:text="交通银行" />
+                <TextView
+                    android:id="@+id/card_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@color/lesserText"
+                    android:textSize="@dimen/font_26"
+                    android:text="@{data.completeDateTime}"
+                    tools:text="**** **** **** **** 8888" />
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/direction"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="15dp"
+                        android:gravity="right"
+                        android:drawablePadding="4dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/redCoupon"
+                        android:textSize="@dimen/font_26"
+                        tools:text="信用卡" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/num"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:layout_below="@+id/direction"
+                        android:drawablePadding="4dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/lesserText"
+                        android:textSize="@dimen/font_26"
+                        tools:text="信用卡" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_arrow_next"
+                        android:id="@+id/arrow"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white_d0"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1px"/>
+        </RelativeLayout>
+
+
+</layout>

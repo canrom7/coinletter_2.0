@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="common_detecting">"活体检测中"&#8230;</string>
+	<string name="common_face_too_far">"请移动手机靠近面部"</string>
+	<string name="common_face_too_close">"请移动手机远离面部"</string>
+	<string name="common_tracking_missed">"请将人脸置于屏幕中央保持不动"</string>
+	<string name="common_tracking_out_of_bound">"请将人脸置于屏幕中央保持不动"</string>
+	<string name="common_tracking_covered">请正对手机，去除%1$s遮挡。</string>
+    <string name="common_tracking_covered_brow">眉毛</string>
+	<string name="common_tracking_covered_eye">眼部</string>
+	<string name="common_tracking_covered_nose">鼻部</string>
+	<string name="common_tracking_covered_mouth">嘴部</string>
+	<string name="common_txt_back">"返回"</string>
+</resources>

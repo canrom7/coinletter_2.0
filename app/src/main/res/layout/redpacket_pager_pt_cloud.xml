@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_bg">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/line_color"/>
+
+    <LinearLayout
+        android:id="@+id/redly2"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/JinETv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/red_envelope_amount"
+            android:textColor="@color/tb_center_title_skin_simple_white"
+            android:textSize="@dimen/sp_16_text_size"/>
+
+
+        <EditText
+            android:id="@+id/edit_money"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingRight="8dp"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:gravity="center_vertical|right"
+            android:hint="0.00"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="@color/color_96"
+            android:textColorHint="@color/color_96"
+            android:textSize="@dimen/sp_16_text_size"/>
+
+        <TextView
+            android:id="@+id/yuanTv"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="@string/rmb"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_16_text_size"/>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_blessing"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/dp12"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="@string/best_wishes"
+        android:maxLength="14"
+        android:singleLine="true"
+        android:textColor="@color/color_96"
+        android:layout_below="@+id/redly2"
+        android:textColorHint="@color/color_96"
+        android:textSize="@dimen/sp_16_text_size"/>
+
+    <TextView
+        android:id="@+id/money_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_blessing"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="￥0.00"
+        android:textColor="@color/Grey_3A4"
+        android:textSize="@dimen/sp_40_text_size"/>
+
+    <Button
+        android:id="@+id/btn_sendRed"
+        style="@style/BossGreenBtn"
+        android:layout_below="@+id/money_tv"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="44dp"
+        android:background="@drawable/shape_red_packet_cloud"
+        android:text="塞钱进红包"
+        android:textSize="@dimen/sp_16_text_size"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sendRed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/unclaimed_red_envelope"
+        android:textColor="@color/color_96"
+        android:visibility="gone"
+        android:textSize="@dimen/sp_16_text_size"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.payeasenet.wepay.ui.viewModel.AcceptModel" />
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/windowBackground"
+        tools:context=".ui.activity.AcceptActivity">
+
+        <include layout="@layout/toolbar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:paddingLeft="16dp"
+            android:id="@+id/requestId"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="原转账&amp;红包\n订单号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="120dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:imeOptions="actionGo"
+                android:text="@={data.requestId}"
+                android:maxLength="32"
+                android:maxLines="3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white_d0"
+            android:id="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/requestId"
+            android:layout_height="1px"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingLeft="16dp"
+            android:id="@+id/rl_wallet"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="接收方钱包ID"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="120dp"
+                android:layout_marginBottom="0dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:imeOptions="actionGo"
+                android:maxLength="17"
+                android:maxLines="1"
+                android:text="@={data.walletId}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+        </RelativeLayout>
+        <Button
+            android:layout_width="116dp"
+            android:text="转账接收"
+            app:layout_constraintTop_toBottomOf="@+id/rl_wallet"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="29dp"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:onClick="@{data::transfer}"
+            android:alpha="@{ TextUtils.isEmpty(data.requestId)? 0.3f : 1f}"
+            android:elevation="0dp"
+            android:enabled="@{!( TextUtils.isEmpty(data.requestId))}"
+            android:background="@color/buttonColor"
+            android:layout_height="65dp"/>
+        <Button
+            android:layout_width="116dp"
+            android:text="转账拒收"
+            app:layout_constraintTop_toBottomOf="@+id/rl_wallet"
+            android:layout_marginRight="39dp"
+            android:layout_marginTop="29dp"
+            android:id="@+id/send"
+            android:textColor="@color/white"
+            app:layout_constraintRight_toRightOf="parent"
+            android:alpha="@{TextUtils.isEmpty(data.requestId)? 0.3f : 1f}"
+            android:elevation="0dp"
+            android:enabled="@{!(TextUtils.isEmpty(data.requestId))}"
+            android:onClick="@{data::rejection}"
+            android:background="@color/buttonColor"
+            android:layout_height="65dp"/>
+        <Button
+            android:layout_width="193dp"
+            android:text="抢红包"
+            app:layout_constraintTop_toBottomOf="@+id/send"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="38dp"
+            android:textColor="@color/white"
+            app:layout_constraintRight_toRightOf="parent"
+            android:alpha="@{TextUtils.isEmpty(data.walletId) || TextUtils.isEmpty(data.requestId)? 0.3f : 1f}"
+            android:elevation="0dp"
+            android:enabled="@{!(TextUtils.isEmpty(data.walletId) || TextUtils.isEmpty(data.requestId))}"
+            android:onClick="@{data::send}"
+            android:background="@color/buttonColor"
+            android:layout_height="65dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

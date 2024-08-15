@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/member_avatar"
+        android:layout_width="@dimen/rounded_avatar_height_big"
+        android:layout_height="@dimen/rounded_avatar_height_big"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/rounded_avatar_margin"
+        android:layout_marginBottom="@dimen/rounded_avatar_margin"
+        android:scaleType="centerCrop"
+        android:src="@drawable/avatar_normal"
+        app:riv_border_color="@color/white"
+        app:riv_corner_radius="@dimen/rounded_avatar_corner_radius"
+        app:riv_oval="false" />
+
+
+
+    <TextView
+        android:id="@+id/member_name"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@+id/member_avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/Grey_600"
+        android:textSize="@dimen/two_level_content"
+        tools:text="@string/app_name" />
+
+</RelativeLayout>

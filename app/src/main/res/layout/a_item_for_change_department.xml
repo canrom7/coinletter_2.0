@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp55"
+        android:paddingLeft="@dimen/dp20"
+        android:paddingRight="@dimen/dp12"
+        android:layout_marginBottom="@dimen/dp12"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/round_withe_storek_10">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/sp_16_text_size"
+            android:textColor="@color/Grey_3A4"/>
+        <Button
+            android:id="@+id/selector"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:enabled="false"
+            android:clickable="false"
+            android:background="@drawable/slector_counter"/>
+    </RelativeLayout>
+</LinearLayout>

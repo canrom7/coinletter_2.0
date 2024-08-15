@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iimm.miliao.view.MergerStatus xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mergerStatus"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/main_color">
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_title_left"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:padding="9dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_title_back_arrow" />
+
+        <TextView
+            android:id="@+id/tv_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:maxWidth="100dp"
+            android:textColor="@color/tool_bar_text_color"
+            android:textSize="@dimen/title_left_text_size" />
+
+        <TextView
+            android:id="@+id/tv_title_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="middle"
+            android:maxWidth="200dp"
+            android:singleLine="true"
+            android:text=""
+            tools:text=""
+            android:textColor="@color/tool_bar_text_color"
+            android:textSize="@dimen/title_center_text_size" />
+
+        <ProgressBar
+            android:id="@+id/pb_title_center"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_title_center"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/dialog_loading"
+            android:indeterminateOnly="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:id="@+id/iv_title_right"
+            android:layout_width="46dp"
+            android:padding="9dp"
+            tools:src="@drawable/ic_app_add"
+            android:layout_height="46dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+        <ImageView
+            android:id="@+id/iv_title_right_right"
+            android:layout_width="@dimen/menu_item_size"
+            android:layout_height="@dimen/menu_item_size"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_title_right"
+            android:padding="14dp"
+            tools:visibility="visible"
+            android:src="@drawable/search_near"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:maxWidth="100dp"
+            android:text=""
+            tools:text=""
+            tools:visibility="visible"
+            android:textColor="@color/tool_bar_text_color"
+            android:textSize="@dimen/title_right_text_size" />
+
+    </RelativeLayout>
+
+</com.iimm.miliao.view.MergerStatus>

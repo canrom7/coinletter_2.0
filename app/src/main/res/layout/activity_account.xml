@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data >
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.payeasenet.wepay.ui.viewModel.AccountModel" />
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/windowBackground"
+        tools:context=".ui.activity.AccountActivity">
+
+        <include layout="@layout/toolbar"/>
+
+
+        <RelativeLayout
+            android:id="@+id/mark"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintLeft_toLeftOf="parent">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginLeft="13dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@{data.idCardRzStatusImg}"
+                android:id="@+id/status"
+                android:layout_height="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black_3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/status"
+                android:text="@{data.idCardRzStatus? @string/real_name_certification_passed:@string/real_name_no_certification_passed}"
+                android:layout_marginLeft="6dp"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingLeft="16dp"
+            android:id="@+id/rl_name"
+            app:layout_constraintTop_toBottomOf="@+id/mark">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="姓名"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="100dp"
+                android:text="@{data.name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white_d0"
+            android:id="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/rl_name"
+            android:layout_height="1px"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingLeft="16dp"
+            android:id="@+id/rl_card"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="身份证号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="100dp"
+                android:text="@{data.idCard}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/auth"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/rl_card"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <ImageView
+                android:id="@+id/auth_status"
+                android:layout_width="27dp"
+                android:src="@{data.operatorRzStatusImg}"
+                android:layout_height="19dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black_3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/auth_status"
+                android:text="@{data.operatorRzStatus ? @string/registered_mobile_number_authentication_successful:@string/phone_number_registration_failed}"
+                android:layout_marginLeft="6dp"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingLeft="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/auth">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="手机号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="100dp"
+                android:text="@{data.mobile}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_32" />
+
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

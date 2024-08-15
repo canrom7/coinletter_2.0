@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null">
+
+    <include layout="@layout/layout_top_menber"/>
+
+    <com.iimm.miliao.ui.live.view.GiftItemView
+        android:id="@+id/gift_item_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="280dp"
+        android:layout_marginLeft="10dp"
+        android:clipChildren="true">
+    </com.iimm.miliao.ui.live.view.GiftItemView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp">
+
+        <master.flame.danmaku.ui.widget.DanmakuView
+            android:id="@+id/danmaku_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/relativeLayout"
+        >
+        <com.iimm.miliao.view.mucChatHolder.MucChatContentView
+            android:id="@+id/chat_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animationCache="false"
+            android:cacheColorHint="#EBEBEB"
+            android:divider="#00000000"/>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <tyrantgit.widget.HeartLayout
+        android:id="@+id/heart_layout"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"/>
+
+    <include layout="@layout/layout_bottom_menu_for_anchor"/>
+
+</RelativeLayout>

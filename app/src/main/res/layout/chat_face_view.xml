@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="165dp" />
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_below="@id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="35dp"
+            android:src="@mipmap/bq_add"
+            android:layout_height="match_parent" />
+
+        <android.support.design.widget.TabLayout
+            app:tabMode="scrollable"
+            style="@style/bq_tab_menu"
+            app:tabPadding="0dp"
+            app:tabIndicatorHeight="0dp"
+            app:tabIndicatorFullWidth="false"
+            android:id="@+id/tab_menu"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+    </LinearLayout>
+
+</merge>

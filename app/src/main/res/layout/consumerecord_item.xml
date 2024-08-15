@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                >
+
+    <LinearLayout
+        android:id="@+id/toply"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/msg_list_selector_background_ripple">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textview_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_16_text_size"
+                tools:text="@string/example_balance_recharge"/>
+
+            <TextView
+                android:id="@+id/textview_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_name"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_96"
+                android:textSize="@dimen/sp_13_text_size"
+                tools:text="2016-12-12 12:12:10"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|right"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textview_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/example_money"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_18_text_size"/>
+            <ImageView
+                android:id="@+id/iv_withdarw_status"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

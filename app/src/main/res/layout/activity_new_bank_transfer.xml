@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/iv_time_icon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/time_icon" />
+
+                <TextView
+                    android:id="@+id/tv_time_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_time_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/please_complete_the_transfer_within_10_minutes"
+                    android:textColor="@color/color_8F9CBB"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_time_hint"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    tools:text="00:00"
+                    android:textColor="@color/color_007EFF"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_my_bank_card_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_add_bank_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/payment_bank_card"
+                        android:textColor="@color/Grey_3A4"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="5dp"
+                        android:src="@mipmap/add_bank_card_icon" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/addTo"
+                        android:textColor="@color/color_96"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/please_transfer_bank_hint"
+                android:textColor="@color/color_96" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/transfer_circuit"
+                android:textColor="@color/color_007EFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TabLayout
+                    app:tabSelectedTextColor="@color/color_0093FF"
+                    app:tabTextColor="@color/Grey_3A4"
+                    android:id="@+id/tbl_menu"
+                    app:tabIndicatorHeight="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/find_line" />
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/deposit_name"
+                        android:textColor="@color/color_8F9CBB"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_deposit_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_8F9CBB"
+                        android:textSize="15sp"
+                        tools:text="卡萨丁" />
+
+                    <ImageView
+                        android:id="@+id/iv_copy_name"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/gray_copy_icon" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/find_line" />
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/bank_account"
+                        android:textColor="@color/color_8F9CBB"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_bank_card_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_8F9CBB"
+                        android:textSize="15sp"
+                        tools:text="0212 2125 3556 356" />
+
+                    <ImageView
+                        android:id="@+id/iv_copy_card_num"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/gray_copy_icon" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/find_line" />
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/branch_name"
+                        android:textColor="@color/color_8F9CBB"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_branch_bank_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_8F9CBB"
+                        android:textSize="15sp"
+                        tools:text="平顶山平安银行" />
+
+                    <ImageView
+                        android:id="@+id/iv_copy_branch_bank_name"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/gray_copy_icon" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/recharge_attention"
+                android:textColor="@color/color_8F9CBB" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/transfer_hint_bg"
+                android:lineSpacingExtra="10dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="9dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp"
+                android:text="@string/transfer_hint"
+                android:textColor="@color/color_F76A24" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f6f7fB"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <EditText
+        android:id="@+id/input_announcement"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/notice_bg"
+        android:gravity="left"
+        android:hint="@string/input_group_announcement"
+        android:paddingLeft="20dp"
+        android:paddingTop="16dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="16dp"
+        android:textColorHint="@color/color_96"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/mergerStatus"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_strong_remind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_announcement">
+
+        <ImageView
+            android:id="@+id/iv_check_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/strong_remind_check_box_bg"/>
+
+        <TextView
+            android:id="@+id/tv_check_hint"
+            android:text="@string/use_strong_remind_send_this"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

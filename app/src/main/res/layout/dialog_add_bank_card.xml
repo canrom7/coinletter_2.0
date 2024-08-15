@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fillet_dialog_bg_15dp"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/title_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/icon_left_close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/padding"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/add_a_bank_card"
+            android:textColor="#8C9AB8"
+            android:textSize="@dimen/sp_18_text_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/color_F8" />
+
+    <LinearLayout
+        android:id="@+id/ll_account_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:alpha="0.7"
+        android:background="@drawable/grop_name_dialog_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_name"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_15_text_size" />
+
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/et_account_name"
+            android:layout_width="0dp"
+            android:lines="1"
+            tools:text=""
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/enter_account_name"
+            android:textColorHint="@color/color_D1D6E0"
+            android:textSize="@dimen/sp_15_text_size" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_card_num"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:alpha="0.7"
+        android:background="@drawable/grop_name_dialog_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bank_card_number"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_15_text_size" />
+
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/et_bank_card"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:lines="1"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/enter_the_bank_card_number"
+            android:textColorHint="@color/color_D1D6E0"
+            android:textSize="@dimen/sp_15_text_size" />
+    </LinearLayout>
+
+   <!-- <LinearLayout
+        android:id="@+id/ll_bank_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:alpha="0.7"
+        android:background="@drawable/grop_name_dialog_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bank_name"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_15_text_size" />
+
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/et_bank_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:maxLength="16"
+            android:lines="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/enter_the_bank_name"
+            android:textColorHint="@color/color_D1D6E0"
+            android:textSize="@dimen/sp_15_text_size" />
+    </LinearLayout>-->
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:text="@string/add_bank_card_dialog_hint"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="20dp"
+        android:background="@color/color_F8" />
+
+
+    <Button
+        android:layout_marginTop="14dp"
+        android:id="@+id/sure_btn"
+        android:layout_marginBottom="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/ok"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:text="@string/sure"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

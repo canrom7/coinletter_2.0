@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_below="@+id/fl_search"
+        android:background="@color/line_color"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <FrameLayout
+            android:id="@+id/fl_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <include layout="@layout/search_layout"/>
+        </FrameLayout>
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_below="@+id/fl_search"
+            android:background="@color/line_color"/>
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/view"
+            android:background="@color/chat_bg"
+            android:cacheColorHint="#00000000"
+            android:scrollbars="none"/>
+
+        <TextView
+            android:id="@+id/text_dialog"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_slide_selected"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:visibility="gone"/>
+
+        <com.iimm.miliao.sortlist.SideBar
+            android:id="@+id/sidebar"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="55dp"
+            android:visibility="visible"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

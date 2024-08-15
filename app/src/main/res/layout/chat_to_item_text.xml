@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChattingLeftStyle"
+    >
+
+    <TextView
+        android:id="@+id/time_tv"
+        style="@style/ChattingTimeStyle"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <com.iimm.miliao.view.HeadView
+        android:id="@+id/chat_head_iv"
+        style="@style/ChattingLeftAvatarStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_msc"
+        android:contentDescription="@string/app_name" />
+
+    <CheckBox
+        android:id="@+id/chat_msc"
+        style="@style/CustomCheckBoxTheme_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@id/chat_head_iv"
+        android:clickable="false"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        style="@style/ChattingLeftContentStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_head_iv">
+
+        <TextView
+            android:id="@+id/nick_name"
+            style="@style/ChattingLeftNickNameStyle"
+            android:visibility="gone"
+            tools:text="sdfsdfs"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/chat_warp_view"
+            style="@style/ChattingLeftContentTextStyle"
+            android:layout_below="@id/nick_name"
+            android:background="@drawable/chat_to_warp_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="@dimen/chat_pop_min_hight">
+
+            <com.iimm.miliao.util.link.HttpTextView
+                android:id="@+id/chat_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:maxWidth="210dp"
+                android:paddingLeft="@dimen/chat_text_left_pd"
+                android:paddingRight="@dimen/chat_text_right_pd"
+                android:textSize="16sp"
+                tools:text="sdfsdfsdfs" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/in_state"
+            layout="@layout/view_holder_state_to" />
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignTop="@id/chat_warp_view"-->
+            <!--android:layout_alignBottom="@id/chat_warp_view"-->
+            <!--android:layout_marginLeft="3dp"-->
+            <!--android:layout_toRightOf="@id/in_state">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_fire_time"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:background="@drawable/bg_danmu"-->
+                <!--android:gravity="center"-->
+                <!--android:singleLine="true"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="9sp"-->
+                <!--android:visibility="gone"-->
+                <!--tools:text="12"-->
+                <!--tools:visibility="visible" />-->
+        <!--</RelativeLayout>-->
+
+        <include layout="@layout/from_time_down_icon"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

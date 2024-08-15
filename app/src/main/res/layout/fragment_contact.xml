@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/chat_bg"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <include
+        android:id="@+id/include2"
+        layout="@layout/search_layout"
+       />
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2"/>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pull_refresh_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:divider="@color/transparent"
+        android:dividerHeight="@null"
+        ptr:layout_constraintBottom_toBottomOf="parent"
+        ptr:layout_constraintEnd_toEndOf="parent"
+        ptr:layout_constraintStart_toStartOf="parent"
+        ptr:layout_constraintTop_toBottomOf="@+id/line"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawableEnd="@drawable/default_ptr_rotate"
+        ptr:ptrDrawableStart="@drawable/default_ptr_flip"
+        ptr:ptrHeaderTextColor="@color/black"
+        ptr:ptrMode="both"
+        ptr:ptrOverScroll="false"
+        ptr:ptrScrollingWhileRefreshingEnabled="true"
+        ptr:ptrShowIndicator="false" />
+
+    <TextView
+        android:id="@+id/text_dialog"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_slide_selected"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/pull_refresh_list"
+        app:layout_constraintEnd_toEndOf="@+id/pull_refresh_list"
+        app:layout_constraintStart_toStartOf="@+id/pull_refresh_list"
+        app:layout_constraintTop_toTopOf="@+id/pull_refresh_list"
+        tools:visibility="visible" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#66000000"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2"
+         />
+    <com.iimm.miliao.sortlist.SideBar
+        android:id="@+id/sidebar"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

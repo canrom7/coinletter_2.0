@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iimm.miliao.view.TimeCountDownView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tcdv_fire"
+    android:layout_width="15dp"
+    android:layout_height="15dp"
+    android:layout_below="@id/chat_warp_view"
+    android:layout_alignRight="@id/chat_warp_view"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="5dp"
+    android:visibility="gone"
+    tools:visibility="visible" />

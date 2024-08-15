@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="tag_key_list_item_view" type="id" />
+    <item name="tag_key_list_item_type" type="id" />
+    <item name="thumb_request" type="id" />
+    <item name="key_avatar" type="id" />
+    <item name="space" type="id"></item>
+<!--    <integer name="space" type="id">1000000</integer>-->
+
+    <item name="immersion_status_bar_view" type="id" />
+    <item name="immersion_navigation_bar_view" type="id" />
+    <item name="immersion_fits_layout_overlap" type="id" />
+    <item name="action_bar_container" type="id" />
+
+    <item name="web_parent_layout_id" type="id"></item>
+    <item name="agentweb_webview_id" type="id"></item>
+    <item name="mainframe_error_viewsub_id" type="id"></item>
+    <item name="mainframe_error_container_id" type="id"></item>
+    <item name="read_del_ll_view" type="id" />
+    <item name="read_del_tv_view" type="id" />
+
+
+</resources>

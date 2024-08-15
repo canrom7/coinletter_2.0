@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.imeina.screeencaptureshare">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application>
+        <activity android:name="cn.imeina.screeencaptureshare.MainScreenActivity">
+
+        </activity>
+
+        <activity android:name="cn.imeina.screeencaptureshare.ScreenCaptureShareActivity"/>
+    </application>
+
+</manifest>

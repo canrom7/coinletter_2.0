@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <View
+                android:id="@+id/v_line_top"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_color" />
+            <FrameLayout
+                android:layout_below="@id/v_line_top"
+                android:id="@+id/search_rl"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include
+
+                    layout="@layout/search_layout"/>
+
+            </FrameLayout>
+
+
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/search_rl"
+                android:background="#eee" />
+
+            <com.handmark.pulltorefresh.library.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/pull_refresh_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/search_rl"
+                android:layout_marginTop="0dp"
+                ptr:ptrAnimationStyle="flip"
+                ptr:ptrDrawableEnd="@drawable/default_ptr_rotate"
+                ptr:ptrDrawableStart="@drawable/default_ptr_flip"
+                ptr:ptrHeaderTextColor="@color/black"
+                ptr:ptrMode="both"
+                ptr:ptrOverScroll="false"
+                ptr:ptrScrollingWhileRefreshingEnabled="true"
+                ptr:ptrShowIndicator="false" />
+
+            <TextView
+                android:id="@+id/text_dialog"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_slide_selected"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <com.iimm.miliao.sortlist.SideBar
+            android:id="@+id/sidebar"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

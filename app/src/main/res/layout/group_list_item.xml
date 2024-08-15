@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/group_list_item"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector_background_ripple"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/catagory_title"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="#F5F7FA"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:textColor="#8C9AB8"
+        android:textSize="@dimen/sp_16_text_size" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:minHeight="60dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp">
+
+        <FrameLayout
+            android:id="@+id/fay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/avatar_img"
+                android:layout_width="@dimen/rounded_avatar_height35"
+                android:layout_height="@dimen/rounded_avatar_height35"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar_normal"
+                android:visibility="visible"
+                app:riv_border_color="@color/white"
+                app:riv_corner_radius="@dimen/rounded_avatar_corner_radius"
+                app:riv_oval="false" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="@dimen/line_height"
+            android:layout_height="61dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@+id/fay"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:id="@+id/info_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/line"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nick_name_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#3A404C"
+                android:textSize="@dimen/group_title_size"
+                tools:text="沙路口的附近" />
+
+            <TextView
+                android:id="@+id/des_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/group_content_size"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color" />
+
+</LinearLayout>

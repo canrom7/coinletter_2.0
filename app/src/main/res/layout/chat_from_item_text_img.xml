@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChattingRightStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/time_tv"
+        style="@style/ChattingTimeStyle"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <com.iimm.miliao.view.HeadView
+        android:id="@+id/chat_head_iv"
+        style="@style/ChattingRightAvatarStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/app_name" />
+
+    <RelativeLayout
+        style="@style/ChattingRightContentStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toLeftOf="@id/chat_head_iv">
+
+        <TextView
+            android:id="@+id/nick_name"
+            style="@style/ChattingRightNickNameStyle"
+            android:visibility="gone"
+            tools:text="sdfsdfs"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/chat_warp_view"
+            style="@style/ChattingRightContentTextStyle"
+            android:layout_width="@dimen/chat_form_info_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nick_name"
+            android:background="@drawable/chat_bg_card_white"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/chat_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:maxLines="3"
+                android:paddingLeft="@dimen/chat_text_right_pd"
+                android:paddingRight="@dimen/chat_text_right_pd"
+                android:text="123123123"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/chat_img"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/defaultpic" />
+
+            <TextView
+                android:id="@+id/chat_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12312312312"
+                android:textSize="@dimen/chat_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="8dp"
+                android:background="#E3E3E3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:drawableRight="@drawable/set_list_next"
+                android:gravity="left|center_vertical"
+                android:text="@string/read_all_content"
+                android:textSize="@dimen/chat_text_size"
+                android:visibility="visible" />
+
+        </LinearLayout>
+        <include layout="@layout/from_time_down_icon" />
+
+        <include layout="@layout/view_holder_state_from" />
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/chat_msc"
+        style="@style/CustomCheckBoxTheme_new"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chat_head_iv"
+        android:clickable="false"
+        android:visibility="visible" />
+
+</RelativeLayout>

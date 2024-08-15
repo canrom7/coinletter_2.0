@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="64dp"
+    android:background="@drawable/list_selector_background_ripple"
+    android:descendantFocusability="blocksDescendants"
+    android:minHeight="64dp"
+    android:paddingLeft="13dp"
+    android:paddingRight="13dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/new_friend_avatar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/rounded_avatar_margin"
+        android:layout_marginBottom="@dimen/rounded_avatar_margin"
+        android:scaleType="centerCrop"
+        android:src="@drawable/avatar_normal"
+        android:visibility="visible"
+        app:riv_border_color="@color/white"
+        app:riv_corner_radius="@dimen/rounded_avatar_corner_radius"
+        app:riv_oval="false" />
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="@dimen/line_height"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/new_friend_avatar"
+        android:background="@color/line_color" />
+
+
+    <LinearLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@+id/action_ll"
+        android:layout_toRightOf="@id/v_line"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nick_name_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/new_friend_nick_size" />
+
+        <TextView
+            android:id="@+id/des_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/grey"
+            android:textSize="@dimen/new_friend_content_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/action_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        android:paddingLeft="2dp"
+        android:paddingRight="5dp">
+
+        <Button
+            android:id="@+id/action_btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/bg_btn_circle"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/three_level_content"
+
+            tools:text="通过验证" />
+
+        <Button
+            android:id="@+id/action_btn_2"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/bg_btn_circle_white"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/three_level_content"
+            tools:text="通过验证" />
+
+    </LinearLayout>
+
+</RelativeLayout>

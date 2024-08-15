@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/romove_team" android:state_enabled="true"/>
+    <item android:drawable="@drawable/remove_team_no" android:state_enabled="false"/>
+</selector>

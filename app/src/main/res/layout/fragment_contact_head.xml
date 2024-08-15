@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/ll_my_colleague"
+            style="@style/contact_head_ll"
+            android:layout_width="60dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/ll_my_device"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_my_colleague_icon"
+                style="@style/contact_head_iv"
+                android:src="@mipmap/my_colleague"/>
+
+            <TextView
+                style="@style/contact_head_tv"
+                android:text="@string/my_colleague"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_my_device"
+            style="@style/contact_head_ll"
+            android:layout_width="60dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/ll_black_book"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ll_my_colleague"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_my_device_icon"
+                style="@style/contact_head_iv"
+                android:src="@mipmap/my_device"/>
+
+            <TextView
+                style="@style/contact_head_tv"
+                android:text="@string/my_device"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_black_book"
+            style="@style/contact_head_ll"
+            android:layout_width="60dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/ll_tag"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ll_my_device"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_my_black_list_icon"
+                style="@style/contact_head_iv"
+                android:src="@mipmap/black_list"/>
+
+            <TextView
+                style="@style/contact_head_tv"
+                android:text="@string/black_list"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tag"
+            style="@style/contact_head_ll"
+            android:layout_width="60dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ll_black_book"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_my_tag_icon"
+                style="@style/contact_head_iv"
+                android:src="@mipmap/tag"/>
+
+            <TextView
+                style="@style/contact_head_tv"
+                android:text="@string/tag"/>
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

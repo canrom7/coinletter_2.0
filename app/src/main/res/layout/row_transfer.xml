@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/catagory_title"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="#F5F7FA"
+        android:gravity="center_vertical"
+        android:paddingLeft="13dp"
+        android:textColor="#8C9AB8"
+        android:textSize="@dimen/sp_16_text_size"
+        tools:text="A" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/list_selector_background_ripple"
+        android:minHeight="60dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <com.iimm.miliao.view.CircleImageView
+            android:id="@+id/avatar_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/avatar_normal" />
+
+        <View
+            android:layout_marginLeft="13dp"
+            android:id="@+id/v_line"
+            android:layout_toRightOf="@id/avatar_img"
+            android:layout_width="@dimen/line_height"
+            android:layout_height="match_parent"
+            android:background="@color/line_color" />
+
+
+        <TextView
+            android:id="@+id/roles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/v_line"
+            android:background="@drawable/bg_role1"
+            android:padding="2dp"
+            android:text="@string/group_owner"
+            android:textColor="@color/app_white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_toRightOf="@id/roles"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/group_title_size" />
+
+        <ImageView
+            android:id="@+id/selected_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_selected"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

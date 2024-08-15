@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"
+                android:paddingLeft="20dp"
+                android:paddingRight="@dimen/dp20"
+                android:background="@drawable/round_withe_storek_10"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp12">
+
+                <TextView
+                    android:id="@+id/company_name"
+                    style="@style/IMTbleLine_TextKey"
+                    android:drawablePadding="5dp"
+                    android:text="@string/company_names" />
+
+                <com.iimm.miliao.view.ClearEditText
+                    android:id="@+id/company_edit"
+                    style="@style/IMTbleLine_TextValue"
+                    android:layout_toLeftOf="@+id/name_arrow_img1"
+                    android:layout_toRightOf="@+id/company_name"
+                    android:background="@null"
+                    android:hint="@string/enter_company_name"
+                    android:inputType="text" />
+
+                <ImageView
+                    android:id="@+id/name_arrow_img1"
+                    style="@style/IMTbleLine_ArrowImg"
+                    android:contentDescription="@string/app_name"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dip"
+                android:background="@color/item_pressed_color" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/create_company_btn"
+                    style="@style/BossBlueBtn"
+                    android:text="@string/create_company" />
+
+            </LinearLayout>
+
+
+
+</LinearLayout>

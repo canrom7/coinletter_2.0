@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.iimm.miliao">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_APN_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.microphone" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" /> <!-- 这个权限必须是applicationId开头， -->
+    <permission
+        android:name="${APP_ID}.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${APP_ID}.permission.MIPUSH_RECEIVE" /> <!-- 魅族推送， -->
+    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE" />
+
+    <permission
+        android:name="${APP_ID}.push.permission.MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${APP_ID}.push.permission.MESSAGE" />
+    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="${APP_ID}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${APP_ID}.permission.C2D_MESSAGE" /> <!-- OPPO 推送 -->
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE" />
+    <uses-sdk tools:overrideLibrary="android.support.v7.appcompat, android.support.v7.recyclerview,com.dingmouren.layoutmanagergroup,com.zyyoona7.lib,                                         com.squareup.leakcanary, com.squareup.leakcanary.analyzer, com.squareup.leakcanary.android.noop,com.mopub.mobileads.base,com.mopub.mobileads.rewarded_video,                                         com.mopub.mobileads.banner,com.mopub.mobileads.interstitial,com.moat.analytics.mobile.mpub,com.google.android.ads.mediationtestsuite,com.bytedance.crash,com.bytedance.metasec" />
+    <!-- 必要权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 可选权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- suppress DeprecatedClassUsageInspection -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK"
+        tools:node="remove" /> <!-- 可选，穿山甲提供“获取地理位置权限”和“不给予地理位置权限，开发者传入地理位置参数”两种方式上报用户位置，两种方式均可不选，添加位置权限或参数将帮助投放定位广告 -->
+    <!-- 请注意：无论通过何种方式提供给穿山甲用户地理位置，均需向用户声明地理位置权限将应用于穿山甲广告投放，穿山甲不强制获取地理位置信息 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- demo场景用到的权限，不是必须的 -->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" /> <!-- 建议添加“query_all_package”权限，穿山甲将通过此权限在Android R系统上判定广告对应的应用是否在用户的app上安装，避免投放错误的广告，以此提高用户的广告体验。若添加此权限，需要在您的用户隐私文档中声明！ -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <application
+        android:name="com.iimm.miliao.MyApplication"
+        android:allowBackup="true"
+        android:fitsSystemWindows="true"
+        android:icon="@mipmap/icon"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/newwork"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:name,android:allowBackup"
+       >
+
+        <activity
+            android:name=".activity.NativeExpressIconActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".activity.FullScreenActivity" />
+        <activity android:name=".activity.RewardActivity" />
+        <activity android:name=".activity.SplashMainActivity" />
+        <activity android:name=".activity.BannerActivity" />
+        <activity android:name=".activity.DrawActivity" />
+        <activity android:name=".activity.FeedActivity" />
+        <activity android:name=".activity.NewInteractionActivity" />
+
+        <meta-data
+            android:name="test"
+            android:value="one" />
+        <meta-data
+            android:name="channel"
+            android:value="two" />
+        <meta-data
+            android:name="Channel_app"
+            android:value="three" />
+
+        <activity
+            android:name=".activity.NativeWaterfallActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.NativeBannerActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FeedListActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AllTestToolActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.IpPortToolActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FeedRecyclerActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FeedVideoActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StreamActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StreamCustomPlayerActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RewardVideoActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FullScreenVideoActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.union_test.toutiao.liveoauth.TTDouYinEntryActivity"
+            android:exported="true" />
+        <activity android:name="com.union_test.toutiao.liveoauth.TTAuthInfoActivity" />
+        <activity
+            android:name=".activity.DrawNativeVideoActivity"
+            android:configChanges="keyboard|orientation|screenSize" />
+        <activity
+            android:name=".activity.DrawNativeExpressVideoActivity"
+            android:configChanges="keyboard|orientation|screenSize" />
+        <activity
+            android:name=".activity.NativeExpressActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NativeExpressListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".activity.BannerExpressActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
+            android:exported="false" />
+
+        <activity android:name=".activity.AllExpressAdActivity" /> <!-- Sample AdMob App ID: ca-app-pub-3000639232404350~2520092023 -->
+        <activity android:name=".activity.NativeExpressOnePointFiveRecyclerActivity" />
+        <activity android:name=".activity.NativeExpressOnePointFiveActivity" />
+        <activity android:name=".activity.FeedOnePointFiveActivity"/>
+
+        <activity
+            android:name=".SelectActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".mediation.java.MediationMainActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationFeedActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.kotlin.MediationKotlinFeedActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationFeedListViewActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationFeedRecyclerViewActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationDrawActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.kotlin.MediationKotlinDrawActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationBannerActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.kotlin.MediationKotlinBannerActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationSplashActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationSplashStartActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.kotlin.MediationKotlinSplashActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.kotlin.MediationKotlinSplashStartActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationRewardActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.kotlin.MediationKotlinRewardActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.java.MediationInterstitialFullActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediation.kotlin.MediationKotlinInterstitialFullActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <!-- admob start================== -->
+        <provider
+            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+            android:authorities="${applicationId}.mobileadsinitprovider"
+            tools:replace="android:authorities" />
+
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+        <!--This meta-data tag is required to use Google Play Services.-->
+        <!-- admob end================== -->
+
+        <!-- baidu start================== -->
+        <!-- 声明打开落地页的Activity（不建议修改主题配置）-->
+        <activity
+            android:name="com.baidu.mobads.sdk.api.AppActivity"
+            android:configChanges="screenSize|keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 声明打开显示激励视频/全屏视频的Activity-->
+        <activity
+            android:name="com.baidu.mobads.sdk.api.MobRewardVideoActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            tools:replace="android:configChanges"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 如果targetSdkVersion设置值>=24，则强烈建议添加以下provider，否则会影响app变现 -->
+        <!-- android:authorities="${packageName}.bd.provider" authorities中${packageName}部分必须替换成app自己的包名 -->
+        <!-- 原来的FileProvider在新版本中改为BdFileProvider,继承自v4的FileProvider,需要在应用内引用support-v4包 -->
+        <provider
+            android:name="com.baidu.mobads.sdk.api.BdFileProvider"
+            android:authorities="${applicationId}.bd.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/bd_file_paths" />
+        </provider>
+        <!-- baidu end================== -->
+
+        <!-- GDT start================== -->
+        <!-- targetSDKVersion >= 24时才需要添加这个provider。provider的authorities属性的值为${applicationId}.fileprovider，请开发者根据自己的${applicationId}来设置这个值，例如本例中applicationId为"com.qq.e.union.demo"。 -->
+        <provider
+            android:name="com.qq.e.comm.GDTFileProvider"
+            android:authorities="${applicationId}.gdt.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/gdt_file_path" />
+        </provider>
+
+        <activity
+            android:name="com.qq.e.ads.PortraitADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.qq.e.ads.LandscapeADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"
+            tools:replace="android:screenOrientation" />
+
+        <!-- 声明SDK所需要的组件 -->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" />
+        <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
+
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <!-- GDT end================== -->
+
+        <!-- klevin start================== -->
+
+        <provider
+            android:name="com.tencent.klevin.utils.FileProvider"
+            android:authorities="${applicationId}.klevin.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/klevin_provider_paths" />
+        </provider>
+
+        <!-- klevin end================== -->
+
+        <!-- mintegral start================== -->
+        <provider
+            android:name="com.mbridge.msdk.foundation.tools.MBFileProvider"
+            android:authorities="${applicationId}.mbFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/mb_provider_paths" />
+        </provider>
+        <!-- mintegral end================== -->
+
+        <!-- sigmob start================== -->
+        <activity
+            android:name="com.sigmob.sdk.base.common.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            tools:replace="android:theme"
+            android:theme="@style/sig_transparent_style" />
+
+        <provider
+            android:name="com.sigmob.sdk.SigmobFileV4Provider"
+            android:authorities="${applicationId}.sigprovider"
+            android:exported="false"
+            android:initOrder="200"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/sigmob_provider_paths"/>
+        </provider>
+
+        <!--        <provider-->
+        <!--            android:name="com.sigmob.sdk.SigmobFileProvider"-->
+        <!--            android:authorities="${applicationId}.sigprovider"-->
+        <!--            android:exported="false"-->
+        <!--            android:grantUriPermissions="true">-->
+        <!--            <meta-data-->
+        <!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+        <!--                android:resource="@xml/sigmob_provider_paths" />-->
+        <!--        </provider>-->
+        <!-- sigmob end================== -->
+
+
+        <service
+            android:name=".ui.BadgeIntentService"
+            android:exported="true" />
+        <!--适配华为（huawei）刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <!-- 适配全面屏 -->
+        <!--适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <!--glide配置-->
+        <meta-data
+            android:name="com.iimm.miliao.util.glide.GlideConfiguration"
+            android:value="GlideModule" />
+
+        <activity android:name="com.iimm.miliao.ui.share.H5LoginActivity" />
+        <receiver android:name="com.iimm.miliao.MyReceiver">
+            <intent-filter>
+                <action android:name="ELITOR_CLOCK" />
+            </intent-filter>
+
+        </receiver>
+        <activity
+            android:name="com.iimm.miliao.ui.share.H5LoginProxyActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${APP_ID}"
+                    android:path="/login"
+                    android:scheme="sk" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.iimm.miliao.ui.notification.NotificationProxyActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${APP_ID}"
+                    android:path="/notification"
+                    android:scheme="sk" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.iimm.miliao.ui.account.ChangePasswordActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.PrivacyWhitelistActivity" />
+        <activity android:name="com.iimm.miliao.ui.groupchat.FaceToFaceGroup" />
+        <activity android:name="com.iimm.miliao.ui.groupchat.RoomSearchResultActivity" />
+        <activity android:name="com.iimm.miliao.ui.groupchat.RoomSearchActivity" /> <!-- 启动页面 -->
+        <provider
+            android:name="com.sigmob.sdk.SigmobFileV4Provider"
+            android:authorities="${applicationId}.sigprovider"
+            android:exported="false"
+            android:initOrder="200"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/sigmob_provider_paths"/>
+        </provider>
+
+        <activity
+            android:name="com.iimm.miliao.ui.SplashActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <!--必有项-->
+                <action android:name="android.intent.action.VIEW" />
+                <!--表示该页面可以被隐式调用，必须加上该项-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--BROWSABLE指定该Activity能被浏览器安全调用-->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="www.${CHANNEL}.com"
+                    android:scheme="${CHANNEL}" />
+            </intent-filter>
+
+
+        </activity>
+        <activity android:name="com.iimm.im.audio.VoiceRecordActivity" />
+        <activity android:name="com.iimm.im.audio.VoiceRecordActivity2" /> <!-- Jitsi -->
+        <activity
+            android:name="com.iimm.miliao.call.Jitsi_connecting_second"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.iimm.miliao.call.Jitsi_pre"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.iimm.miliao.call.JitsiIncomingcall"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.iimm.miliao.call.JitsiInviteActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity android:name="com.iimm.miliao.course.CourseDateilsActivity" />
+        <activity android:name="com.iimm.miliao.course.LocalCourseActivity" />
+        <activity android:name="com.iimm.miliao.course.SelectFriendsActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.RegisterActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.RegisterPasswordActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.RegisterUserBasicInfoActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.LoginHistoryActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.iimm.miliao.ui.account.DataDownloadActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.SelectPrefixActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.iimm.miliao.ui.account.SwitchLoginActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.FindPwdActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.VerifySecretActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.SetPasswordActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.iimm.miliao.ui.circle.range.AtSeeCircleActivity" />
+        <activity android:name="com.iimm.miliao.ui.circle.range.NewZanActivity" />
+        <activity android:name="com.iimm.miliao.ui.circle.range.SeeCircleActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.circle.range.SendShuoshuoActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name="com.iimm.miliao.ui.circle.range.SendAudioActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name="com.iimm.miliao.ui.circle.range.SendVideoActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name="com.iimm.miliao.ui.circle.range.SendFileActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity android:name="com.iimm.miliao.ui.circle.BusinessCircleActivity" /> <!-- 我的同事 -->
+        <activity android:name="com.iimm.miliao.ui.circle.BusinessCircleActivityNew" />
+        <activity
+            android:name="com.iimm.miliao.ui.circle.BusinessCircleSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <activity android:name="com.iimm.miliao.ui.circle.SelectFriendActivity" />
+        <activity android:name="com.iimm.miliao.ui.company.AddEmployee" />
+        <activity android:name="com.iimm.miliao.ui.company.ChangeEmployeeDepartment" />
+        <activity android:name="com.iimm.miliao.ui.company.CreateCompany" />
+        <activity android:name="com.iimm.miliao.ui.company.CreateDepartment" />
+        <activity android:name="com.iimm.miliao.ui.company.CreateGroup" />
+        <activity android:name="com.iimm.miliao.ui.company.ManagerCompany" />
+        <activity android:name="com.iimm.miliao.ui.company.ModifyCompanyName" />
+        <activity android:name="com.iimm.miliao.ui.company.ModifyDepartmentName" /> <!-- 通讯录头部 -->
+        <activity
+            android:name="com.iimm.miliao.ui.contacts.label.CreateLabelActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.iimm.miliao.ui.contacts.label.LabelActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.iimm.miliao.ui.contacts.label.SelectLabelFriendActivity" />
+        <activity android:name="com.iimm.miliao.ui.contacts.BlackActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.contacts.ContactInviteActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.iimm.miliao.ui.contacts.ContactsActivity" />
+        <activity android:name="com.iimm.miliao.ui.contacts.ContactsMsgInviteActivity" />
+        <activity android:name="com.iimm.miliao.ui.contacts.DeviceActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.contacts.FriendAndGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.iimm.miliao.ui.contacts.NewFriendActivity" />
+        <activity android:name="com.iimm.miliao.ui.contacts.PublishNumberActivity" />
+        <activity android:name="com.iimm.miliao.ui.contacts.RoomActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.contacts.SearchFriendActivity"
+            android:windowSoftInputMode="stateVisible" />
+        <activity android:name="com.iimm.miliao.ui.contacts.TalkHistoryActivity" />
+        <activity android:name="com.iimm.miliao.ui.groupchat.SelectContactsActivity" /> <!-- 直播 -->
+        <activity android:name="com.iimm.miliao.ui.live.CreateLiveActivity" />
+        <activity android:name="com.iimm.miliao.ui.live.LiveActivity" /> <!-- 抖音 -->
+        <activity
+            android:name="com.iimm.miliao.ui.trill.TrillActivity"
+            android:theme="@style/AppTheme_Sliding" />
+        <activity
+            android:name="com.iimm.miliao.ui.trill.TriListActivity"
+            android:theme="@style/AppTheme_Sliding" />
+        <activity
+            android:name="com.iimm.miliao.ui.trill.TrillMoreActivity"
+            android:theme="@style/RecxTheme" />
+        <activity
+            android:name="com.iimm.miliao.ui.xrce.RecordxActivity"
+            android:theme="@style/RecxTheme" />
+        <activity
+            android:name="com.iimm.miliao.ui.xrce.PreviewxActivity"
+            android:theme="@style/RecxTheme" /> <!-- 发布短视频 -->
+        <activity
+            android:name="com.iimm.miliao.ui.trill.ReleasexActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" /> <!-- 短视频选择标签 -->
+        <activity
+            android:name="com.iimm.miliao.ui.trill.TagPickerActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name="com.iimm.miliao.ui.live.LivePlayingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.iimm.miliao.ui.live.PushFlowActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.iimm.miliao.ui.map.MapActivity" />
+        <activity android:name="com.iimm.miliao.ui.map.MapPickerActivity" /> <!-- 红包 -->
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.MucSendRedPacketActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.MucSendRedSelectActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.MucCloudSendRedPacketActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.MyConsumeRecord" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.QuXianActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.RedDetailsActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.CloudRedDetailsActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.RedListActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.SendRedPacketActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.SendCloudRedPacketActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.H5PayAdd" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.WxPayAdd" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.WxPayBlance" />
+        <activity android:name="com.iimm.miliao.ui.me.sendgroupmessage.ChatActivityForSendGroup" /> <!-- 收付款、转账 -->
+        <activity
+            android:name="com.iimm.miliao.pay.PayActivity"
+            android:launchMode="singleTask" />
+        <activity android:name="com.iimm.miliao.pay.TransferMoneyActivity" />
+        <activity android:name="com.iimm.miliao.pay.MicroTransferMoneyActivity" />
+        <activity android:name="com.iimm.miliao.pay.TransferMoneyDetailActivity" />
+        <activity android:name="com.iimm.miliao.pay.MicroTransferMoneyDetailActivity" />
+        <activity android:name="com.iimm.miliao.pay.TransferRecordActivity" />
+        <activity android:name="com.iimm.miliao.pay.PaymentActivity" />
+        <activity android:name="com.iimm.miliao.pay.PaymentReceiptMoneyActivity" />
+        <activity android:name="com.iimm.miliao.pay.ReceiptActivity" />
+        <activity android:name="com.iimm.miliao.pay.ReceiptPayMoneyActivity" />
+        <activity android:name="com.iimm.miliao.pay.ReceiptSetMoneyActivity" /> <!-- Me模块 -->
+        <activity android:name="com.iimm.miliao.ui.me.AboutActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.BasicInfoEditActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity android:name="com.iimm.miliao.ui.me.FontSizeActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.LocalVideoActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.MyCollection" />
+        <activity android:name="com.iimm.miliao.ui.me.NearPersonActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.PrivacySettingActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.BandAccountActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.SelectFriendsActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity android:name="com.iimm.miliao.ui.me.SelectLabelActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.SetAccountActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.SetConfigActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.SettingActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.SkinStore" />
+        <activity android:name="com.iimm.miliao.ui.me.SwitchLanguage" /> <!-- 消息模块 -->
+        <activity
+            android:name="com.iimm.miliao.ui.message.assistant.GroupAssistantAddKeywordActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.iimm.miliao.ui.message.assistant.GroupAssistantDetailActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.assistant.SelectGroupAssistantActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.ChatActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/chat_theme" />
+        <activity android:name="com.iimm.miliao.ui.message.ChatHistoryActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.ChatOverviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Sliding" />
+        <activity android:name="com.iimm.miliao.ui.message.single.PersonSettingActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.single.PersonDataSetActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.single.SetChatBackActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.single.SetLabelActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.single.SetRemarkActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.MucChatActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/chat_theme" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.AddContactsActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.DeleteGroupMemberActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.GroupManager" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.multi.GroupMoreFeaturesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.GroupTransferActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.InviteVerifyActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.NoticeListActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.NoticeActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.multi.RoomInfoActivity"
+            android:launchMode="singleTop" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.RoomReadListActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.GroupSignActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.multi.GroupSignRecordActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.multi.SetManagerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.iimm.miliao.ui.message.search.SearchChatHistoryActivity" />
+        <activity android:name="com.iimm.miliao.ui.message.search.SearchDesignationContent" />
+        <activity android:name="com.iimm.miliao.ui.message.search.SearchImageVideoContent" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.InstantMessageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.iimm.miliao.ui.message.QuickSendPreviewActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.SelectNewContactsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.SelectNewGroupInstantActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" /> <!-- 群文件 -->
+        <activity android:name="com.iimm.miliao.ui.mucfile.AddMucFileActivity" />
+        <activity android:name="com.iimm.miliao.ui.mucfile.MucFileDetails" />
+        <activity android:name="com.iimm.miliao.ui.mucfile.MucFileListActivity" />
+        <activity android:name="com.iimm.miliao.ui.mucfile.MucFilePreviewActivity" /> <!-- 附近模块 -->
+        <activity android:name="com.iimm.miliao.ui.nearby.UserSearchActivity" />
+        <activity android:name="com.iimm.miliao.ui.nearby.UserAddActivity" />  <!-- 新版添加朋友 -->
+        <activity android:name="com.iimm.miliao.ui.nearby.UserListActivity" />
+        <activity android:name="com.iimm.miliao.ui.nearby.UserListGatherActivity" />
+        <activity android:name="com.iimm.miliao.ui.other.BasicInfoActivity" />
+        <activity android:name="com.iimm.miliao.ui.other.MoreInfoActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.LogActivity" />
+        <activity android:name="com.iimm.miliao.ui.other.QRcodeActivity" /> <!-- 分享模块 -->
+        <activity
+            android:name="com.iimm.miliao.ui.share.ShareLoginActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.iimm.miliao.ui.share.AuthorizationActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.iimm.miliao.ui.share.ShareLifeCircleActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.iimm.miliao.ui.share.ShareNewFriend"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.iimm.miliao.ui.share.ShareNewGroup"
+            android:launchMode="singleTop" /> <!-- Tool Activity -->
+        <activity
+            android:name="com.iimm.miliao.ui.tool.MultiImagePreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Sliding" />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.SelectAreaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.SelectConstantActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.SelectConstantSectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.SingleImagePreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Sliding" />
+        <activity
+            android:name="com.iimm.miliao.video.ChatVideoPreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.MyWebViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.SelectDateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:fitsSystemWindows="true"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/BackgroundTheme"
+            android:windowSoftInputMode="adjustPan" /> <!-- Android 8.0 报错 Only fullscreen opaque activities can request orientation -->
+        <activity
+            android:name="com.iimm.miliao.ui.UserCheckedActivity"
+            android:theme="@style/IMTheme.DialogStyle" />
+        <activity
+            android:name="com.iimm.miliao.video.EasyCameraActivity"
+            android:screenOrientation="portrait" /> <!-- android:screenOrientation="portrait" 强制竖屏 -->
+        <activity
+            android:name="com.iimm.miliao.video.VideoRecorderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/RecxTheme" />
+        <activity
+            android:name="com.dhh.easy.chat.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.dhh.easy.chat.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.redpacket.ChangePayPasswordActivity"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.ChangePhoneActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.ModifyBindPhoneActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.redpacket.BindNewPhoneActivity" />
+        <!-- 图片多选框架 -->
+        <!--
+                <activity
+                    android:name="com.foamtrace.photopicker.PhotoPickerActivity"
+                    android:configChanges="orientation|screenSize"
+                    android:theme="@style/PhotoPickerTheme"/>
+                <activity
+                    android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
+                    android:theme="@style/PhotoPickerTheme"/>
+        -->
+        <activity
+            android:name="com.iimm.miliao.view.photopicker.PhotoPickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name="com.iimm.miliao.view.photopicker.PhotoPreviewActivity"
+            android:theme="@style/PhotoPickerTheme" />
+
+        <service android:name="com.iimm.miliao.call.JitsiFloatService" />
+        <service android:name="com.iimm.miliao.call.RecordService" />
+        <service android:name="com.iimm.miliao.view.window.WindowShowService" />
+        <service android:name="com.iimm.miliao.RestartService" />
+        <service android:name="com.iimm.miliao.CloseService" />
+
+        <service android:name="com.iimm.miliao.xmpp.XmppHelpService" />
+        <!--authorities 必须和 Constants 文件中的 FILE_PROVIDER_AUTHORITY 保持一致-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${APP_ID}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver
+            android:name="com.iimm.miliao.MyBroadcastReceiver"
+            android:process=":restart">
+            <intent-filter>
+                <action android:name="${APP_ID}.action.broadcasttest.startActivity" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="${BAIDU_API_KEY}" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${GOOGLE_API_KEY}" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- 推送服务绑定进程 -->
+        <service
+            android:name="com.xiaomi.push.service.XMPushService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service> <!-- 注：此service必须在3.0.1版本以后（包括3.0.1版本）加入 -->
+        <service
+            android:name="com.xiaomi.push.service.XMJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":pushservice" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.PingReceiver"
+            android:exported="false"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.iimm.miliao.push.xiaomi.MiMessageReceiver"
+            android:exported="true">
+
+            <!-- 这里com.xiaomi.mipushdemo.DemoMessageRreceiver改成app中定义的完整类名 -->
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver> <!-- 注：此service必须在2.2.5版本以后（包括2.2.5版本）加入 -->
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
+        <service android:name="com.iimm.miliao.push.google.FirebaseMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- VIVO 推送 -->
+        <service
+            android:name="com.vivo.push.sdk.service.CommandClientService"
+            android:exported="true" />
+
+        <activity
+            android:name="com.vivo.push.sdk.LinkProxyClientActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- push应用定义消息receiver声明 -->
+        <receiver android:name="com.iimm.miliao.push.vivo.VivoPushMessageReceiver">
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.vivo.pushclient.action.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="${VIVO_APP_KEY}" />
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="${VIVO_APP_ID}" /> <!-- OPPO 推送 -->
+        <service
+            android:name="com.iimm.miliao.push.oppo.OppoPushMessageService"
+            android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
+            <intent-filter>
+                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE" />
+            </intent-filter>
+        </service> <!-- 华为推送 -->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="${HUAWEI_APP_ID}" /> <!-- 2.BridgeActivity定义了HMS-SDK中一些跳转所需要的透明页面 -->
+        <activity
+            android:name="com.huawei.hms.activity.BridgeActivity"
+            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent">
+            <meta-data
+                android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent" />
+        </activity> <!-- 3.UpdateProvider用于HMS-SDK引导升级HMS，提供给系统安装器读取升级文件。 -->
+        <!-- 不同应用的authorities必须不同，所以用applicationId开头， -->
+        <provider
+            android:name="com.huawei.hms.update.provider.UpdateProvider"
+            android:authorities="${APP_ID}.hms.update.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" /> <!-- 4.用来接收PUSH消息的receiver： -->
+        <receiver android:name="com.iimm.miliao.push.huawei.HuaweiPushRevicer">
+            <intent-filter>
+
+                <!-- 必须,用于接收TOKEN -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- 必须，用于接收消息 -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 -->
+                <action android:name="com.huawei.android.push.intent.CLICK" />
+                <!-- 可选，查看PUSH通道是否连接，不查看则不需要 -->
+                <action android:name="com.huawei.intent.action.PUSH_STATE" />
+            </intent-filter>
+        </receiver> <!-- 5. 接收通道发来的通知栏消息： -->
+        <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver">
+            <intent-filter>
+
+                <!-- 接收通道发来的通知栏消息，兼容老版本PUSH -->
+                <action android:name="com.huawei.intent.action.PUSH" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.iimm.miliao.ui.life.LifeCircleActivity" />
+        <activity android:name="com.iimm.miliao.ui.nearby.PublicNumberSearchActivity" />
+        <activity android:name="com.iimm.miliao.ui.nearby.PublicNumberListActivity" />
+        <activity android:name="com.iimm.miliao.ui.circle.range.PraiseListActivity" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/icon_notification" /> <!-- 魅族推送， -->
+        <!-- 绑定进程保活 -->
+        <service
+            android:name="com.iimm.miliao.push.meizu.MeizuForegroundService"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.iimm.miliao.push.meizu.MeizuPushMsgReceiver"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+                <!-- 接收register消息 -->
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
+                <!-- 接收unregister消息 -->
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK" />
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+
+                <category android:name="${APP_ID}" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.iimm.miliao.ui.systemshare.ShareNearChatFriend"
+            android:label="@string/send_to_friend">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.iimm.miliao.ui.systemshare.ShareNewFriend" />
+        <activity android:name="com.iimm.miliao.ui.systemshare.ShareNewGroup" />
+        <activity
+            android:name="com.iimm.miliao.ui.systemshare.ShareLifeCircleProxyActivity"
+            android:label="@string/send_to_life_circle">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.iimm.miliao.ui.systemshare.ShareShuoshuoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.systemshare.ShareVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.systemshare.ShareFileActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.iimm.miliao.ui.account.QuickLoginAuthority">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.android.com"
+                    android:port="80"
+                    android:scheme="imapp" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.iimm.miliao.ui.account.QuickPay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.android.pay.com"
+                    android:port="80"
+                    android:scheme="imapp" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.iimm.miliao.call.QuickMeetingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="meet.youjob.co"
+                    android:scheme="imapp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.iimm.miliao.ui.lock.DeviceLockActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name="com.iimm.miliao.ui.me.SecureSettingActivity" />
+        <activity android:name="com.iimm.miliao.ui.me.SecurityQuestionActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.lock.ChangeDeviceLockPasswordActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.iimm.miliao.ui.contacts.SendContactsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.SignInRedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.message.multi.GroupStrongReminderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.LoginPWvVerify"
+            android:screenOrientation="portrait" />
+        <!--QQ-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="${QQ_APP_ID}" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.iimm.miliao.ui.account.PublicAccountScannerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.iimm.miliao.ui.emoji.BqShopActivity" />
+        <activity android:name="com.iimm.miliao.ui.emoji.BqDetailActivity" />
+        <activity android:name="com.iimm.miliao.ui.emoji.BqManageActivity" />
+        <activity android:name="com.iimm.miliao.ui.emoji.CustomBqManageActivity" />
+        <activity
+            android:name="com.iimm.miliao.ui.company.CompanyDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.company.DepartmentDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.company.EmployeesDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.company.PositionUpdateNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.share.AuthorizationLoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.DELETE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:host="${APP_ID}"
+                    android:path="/login"
+                    android:scheme="TIGIM" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.iimm.miliao.ui.share.ShareNearChatFriend"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${APP_ID}"
+                    android:path="/share"
+                    android:scheme="TIGIM" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.iimm.miliao.ui.me.redpacket.BankTransferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.redpacket.NewBankTransferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.redpacket.WithDrawSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.tool.WebView2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.SelectorBlanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iimm.miliao.ui.me.redpacket.AddWithdrawActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.just.agentweb.ActionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:launchMode="standard"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.OpenWalletActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.MainActivity"
+            android:label="我的钱包"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.EndingActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.WithdrawActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.TransferActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.AcceptActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.RedPacketActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.RedPacketListActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.AccountActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.BillActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme"></activity>
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.RedPacketDetailsActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.TransactionDetailActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.RedPacketsActivity"
+            android:label="数字证书"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity
+            android:name="com.payeasenet.wepay.ui.activity.RechargeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteToolbarTheme" />
+        <activity android:name="com.payeasenet.wepay.ui.activity.PayWebViewActivity" />
+
+        <service android:name="com.iimm.miliao.view.window.MainWindowShowService" />
+
+        <activity android:name="com.iimm.miliao.ui.tool.MainAlertWebViewActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ad.SigmobRewardVideoActivity" />
+        <activity android:name=".ad.CjsRewardVideoActivity" />
+        <activity android:name=".ad.BaiduRewardVideoActivity" />
+        <activity android:name=".ad.GdtRewardVideoActivity" />
+
+    </application>
+
+</manifest>

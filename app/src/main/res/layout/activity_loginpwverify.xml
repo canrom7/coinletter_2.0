@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/a_view_actionbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/round_withe_storek_10"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3">
+
+        <TextView
+            android:id="@+id/alrtcontent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:gravity="center"
+            android:text="输入登录密码，完成身份验证"
+            android:textColor="@color/tb_center_title_skin_simple_white"
+            android:textSize="@dimen/sp_16_text_size" />
+
+        <View
+            android:id="@+id/loginpw_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/chat_bg" />
+
+        <EditText
+            android:id="@+id/loginPw"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:background="@color/show_background"
+            android:hint="请输入登录密码"
+            android:paddingLeft="@dimen/dp16"
+            android:paddingRight="@dimen/dp16"/>
+        <LinearLayout
+            android:id="@+id/image_codell"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingRight="4dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/imagecode_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/show_background"
+                android:hint="输入图形码"
+                android:textSize="@dimen/sp_15_text_size"
+                android:textColor="@color/Grey_3A4"
+                android:paddingLeft="@dimen/dp16"
+                android:layout_weight="1"
+                android:textColorHint="@color/color_cc"/>
+            <ImageView
+                android:id="@+id/imagecode"
+                android:layout_weight="2.5"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+        <com.jungly.gridpasswordview.GridPasswordView
+            android:id="@+id/payPassword"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:gpvTextSize="@dimen/dp10"
+            android:layout_marginBottom="8dp"
+            app:gpvLineColor="@color/color_c4c4c4"
+            app:gpvLineWidth="@dimen/frame_width"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/auth_code_ll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round_withe_storek_10"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp">
+
+
+            <EditText
+                android:id="@+id/auth_code_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:digits="@string/digits_number"
+                android:hint="@string/verification_code"
+                android:inputType="number"
+                android:textColor="@color/color_cc"
+                android:textColorHint="@color/color_cc"
+                android:textSize="@dimen/one_level_title" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/send_again_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bt_selector_w_g"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:enabled="true"
+            android:text="@string/get_msg_code"
+            android:textColor="@color/bt_3a4_8f9cbb_enable"
+            android:textSize="@dimen/sp_15_text_size" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/next"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="下一步"
+        android:textSize="@dimen/sp_16_text_size"
+        android:textColor="@color/white"
+        android:background="@drawable/round_bt_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auth_code_ll" />
+</android.support.constraint.ConstraintLayout>

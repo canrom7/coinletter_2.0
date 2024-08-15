@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.iimm.miliao.view.MergerStatus
+            android:id="@+id/mergerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_content"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/iv_title_left"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:padding="9dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_close_circle" />
+
+                <TextView
+                    android:id="@+id/tv_title_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="middle"
+                    android:maxWidth="200dp"
+                    android:singleLine="true"
+                    android:text="指定可领"
+                    android:textColor="@color/tool_bar_text_color"
+                    android:textSize="@dimen/title_center_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_title_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:maxWidth="100dp"
+                    android:text="确定"
+                    android:background="@drawable/bg_tight_tv"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14_text_size" />
+
+            </RelativeLayout>
+
+        </com.iimm.miliao.view.MergerStatus>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/search_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_white"
+                    android:gravity="center_vertical"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/line_color" />
+
+                    <EditText
+                        android:id="@+id/search_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/et_search_bg"
+                        android:drawableLeft="@drawable/search"
+                        android:drawablePadding="9dp"
+                        android:hint="@string/search_for_contacts"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@color/main_color"
+                        android:textSize="@dimen/message_search_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@color/line_color" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/search_rl"
+                    android:background="#eee" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/view"
+                    android:layout_marginTop="0dp"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@color/line_color"
+                    android:dividerHeight="1dp"
+                    android:footerDividersEnabled="false"
+                    android:scrollbars="none" />
+
+                <TextView
+                    android:id="@+id/text_dialog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bg_slide_selected"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <com.iimm.miliao.sortlist.SideBar
+                android:id="@+id/sidebar"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

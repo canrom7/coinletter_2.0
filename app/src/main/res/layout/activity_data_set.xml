@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/f6f7fB"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/set_notes_labels_relat_cd"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/msg_list_selector_background_ripple"
+            >
+
+            <RelativeLayout
+                android:id="@+id/set_notes_labels_relat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <TextView
+                    android:id="@+id/set_notes_labels_relat_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:text="@string/set_notes_labels"
+                    android:textColor="@color/msg_list_text_color"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/set_notes_labels_relat_conent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="right"
+                    android:textColor="@color/color_96"
+                    android:textSize="@dimen/enter_money"
+                    android:layout_toLeftOf="@+id/set_notes_labels_relat_iv"
+                    android:layout_toRightOf="@+id/set_notes_labels_relat_tv"/>
+
+                <ImageView
+                    android:id="@+id/set_notes_labels_relat_iv"
+                    android:layout_width="7dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/find_return" />
+
+
+            </RelativeLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp12"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/msg_list_selector_background_ripple">
+
+                <RelativeLayout
+                    android:id="@+id/add_blacklist_relat"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+
+                    <TextView
+                        android:id="@+id/blacklist_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp20"
+                        android:text="@string/add_blacklist"
+                        android:textColor="@color/msg_list_text_color"
+                        android:textSize="15sp" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/isAdd_blacklist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        app:sb_background="@color/app_white"
+                        app:sb_checked_color="@color/color_00"
+                        app:sb_enable_effect="false"
+                        app:sb_shadow_radius="4dp"
+                        app:sb_show_indicator="false" />
+
+
+                    <View
+                        android:id="@+id/tv_view"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/add_blacklist_relat_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/find_line" />
+
+                <RelativeLayout
+                    android:id="@+id/report_relat"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp20"
+                        android:text="@string/report"
+                        android:textColor="@color/msg_list_text_color"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/find_return" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/delete_cd"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/msg_list_selector_background_ripple"
+            >
+
+            <TextView
+                android:id="@+id/delete_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textSize="15sp"
+                android:text="@string/delete2"
+                android:gravity="center"
+                android:textColor="@color/ed6350"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

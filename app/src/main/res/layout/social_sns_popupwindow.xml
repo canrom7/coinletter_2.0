@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="158dp"
+              android:layout_height="39dp"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:background="@drawable/shape_popupwindow"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll_zan"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+
+        <com.iimm.miliao.view.CheckableImageView
+            android:id="@+id/ivAwesome"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/checkable_thumb" />
+
+        <TextView
+            android:id="@+id/digBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:gravity="center"
+            android:text="赞"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/line_height"
+        android:layout_height="24dp"
+        android:background="#373D40" />
+
+    <LinearLayout
+        android:id="@+id/ll_pinlun"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <com.iimm.miliao.view.CheckableImageView
+            android:id="@+id/ivComment"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/checkable_comment" />
+
+        <TextView
+            android:layout_marginLeft="2dp"
+            android:id="@+id/commentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="评论"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/line_height"
+        android:layout_height="24dp"
+        android:background="#373D40"  />
+
+    <LinearLayout
+        android:id="@+id/ll_ivCollection"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <com.iimm.miliao.view.CheckableImageView
+            android:id="@+id/ivCollection"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/checkable_collection" />
+
+        <TextView
+            android:layout_marginLeft="2dp"
+            android:id="@+id/ivCollection_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="收藏"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/line_height"
+        android:layout_height="24dp"
+        android:background="#373D40"  />
+
+    <LinearLayout
+        android:id="@+id/ll_ivReport"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <com.iimm.miliao.view.CheckableImageView
+            android:id="@+id/ivReport"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/report" />
+
+        <TextView
+            android:layout_marginLeft="2dp"
+            android:id="@+id/ivReport_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="收藏"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

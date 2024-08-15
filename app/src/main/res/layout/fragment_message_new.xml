@@ -1,0 +1,68 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:slide="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/message_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/message_toobar"
+        layout="@layout/a_view_actionbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/message_view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_toobar"/>
+
+    <include
+        android:id="@+id/message_search"
+        layout="@layout/head_for_messagefragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_view"/>
+    <com.roamer.slidelistview.SlideListView
+        android:id="@+id/notice_account_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        slide:slideMode="right"
+        app:layout_constraintTop_toBottomOf="@+id/message_search"
+        slide:slideRightAction="reveal" />
+    
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/message_srl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/dp10"
+        app:layout_constraintTop_toBottomOf="@+id/notice_account_lv">
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/message_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:fadingEdge="none"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</android.support.constraint.ConstraintLayout>

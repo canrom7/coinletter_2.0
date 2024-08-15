@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_verify_dialog"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/title_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/icon_left_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/padding"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text=""
+                android:textColor="#8C9AB8"
+                android:textSize="@dimen/sp_18_text_size"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="斯洛伐克就" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:id="@+id/ll_start_live"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/content"
+                    android:maxLength="15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_search_dialog_bg"
+                    android:hint="@string/please_input_room_name"
+                    android:inputType="textMultiLine"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:minHeight="60dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text=""
+                    android:textColor="@color/Grey_3A4"
+                    android:textColorHint="@color/Grey_400"
+                    android:textSize="17sp"
+                    tools:text="" />
+
+                <EditText
+                    android:id="@+id/second_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/et_search_dialog_bg"
+                    android:ellipsize="middle"
+                    android:hint="@string/please_input_room_desc"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:minHeight="60dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text=""
+                    android:textColor="@color/Grey_3A4"
+                    android:textColorHint="@color/Grey_400"
+                    android:textSize="17sp"
+                    tools:text="" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- <attr
+               name="sb_shadow_radius"
+               format="reference|dimension"/>
+           阴影半径
+
+           <attr
+               name="sb_shadow_offset"
+               format="reference|dimension"/>
+           阴影偏移
+
+           <attr
+               name="sb_shadow_color"
+               format="reference|color"/>
+           阴影颜色
+
+           <attr
+               name="sb_uncheck_color"
+               format="reference|color"/>
+           关闭颜色
+
+           <attr
+               name="sb_checked_color"
+               format="reference|color"/>
+           开启颜色
+
+           <attr
+               name="sb_border_width"
+               format="reference|dimension"/>
+           边框宽度
+
+           <attr
+               name="sb_checkline_color"
+               format="reference|color"/>
+           开启指示器颜色
+
+           <attr
+               name="sb_checkline_width"
+               format="reference|dimension"/>
+           开启指示器线宽
+
+           <attr
+               name="sb_uncheckcircle_color"
+               format="reference|color"/>
+           关闭指示器颜色
+
+           <attr
+               name="sb_uncheckcircle_width"
+               format="reference|dimension"/>
+           关闭指示器线宽
+
+           <attr
+               name="sb_uncheckcircle_radius"
+               format="reference|dimension"/>关闭指示器半径
+
+           <attr
+               name="sb_checked"
+               format="reference|boolean"/>
+           是否选中
+
+           <attr
+               name="sb_shadow_effect"
+               format="reference|boolean"/>
+           是否启用阴影
+
+           <attr
+               name="sb_effect_duration"
+               format="reference|integer"/>
+           动画时间，默认300ms
+
+           <attr
+               name="sb_button_color"
+               format="reference|color"/>
+           按钮颜色
+
+           <attr
+               name="sb_show_indicator"
+               format="reference|boolean"/>
+           是否显示指示器，默认true：显示
+
+           <attr
+               name="sb_background"
+               format="reference|color"/>
+           背景色，默认白色
+
+           <attr
+               name="sb_enable_effect"
+               format="reference|boolean"/>
+           是否启用特效，默认true-->
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginTop="12dp"
+            android:background="@color/line_color" />
+
+        <RelativeLayout
+            android:id="@+id/read_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:id="@+id/is_read_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/display_read_number"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/me_title_size" />
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/switch_read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_background="@color/app_white"
+                app:sb_checked_color="@color/color_00"
+                app:sb_effect_duration="100"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/public_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:id="@+id/is_show_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/private_group"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/me_title_size" />
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/switch_look"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_background="@color/app_white"
+                app:sb_checked="true"
+                app:sb_checked_color="@color/color_00"
+                app:sb_effect_duration="100"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/verify_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/group_verification"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/me_title_size" />
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/switch_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_background="@color/app_white"
+                app:sb_checked_color="@color/color_00"
+                app:sb_effect_duration="100"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/show_member_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/display_member"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/me_title_size" />
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/switch_show_member"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_background="@color/app_white"
+                app:sb_checked="true"
+                app:sb_checked_color="@color/color_00"
+                app:sb_effect_duration="100"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/send_card_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/member_chat_privately"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/me_title_size" />
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/switch_send_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_background="@color/app_white"
+                app:sb_checked="true"
+                app:sb_checked_color="@color/color_00"
+                app:sb_effect_duration="100"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false" />
+
+        </RelativeLayout>
+
+
+        <Button
+            android:layout_marginBottom="20dp"
+            android:id="@+id/sure_btn"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/shape_transfer"
+            android:text="@string/sure"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</ScrollView>

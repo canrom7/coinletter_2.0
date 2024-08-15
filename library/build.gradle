@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion compile_version
+
+    defaultConfig {
+        minSdkVersion min_version
+        targetSdkVersion target_version
+        consumerProguardFiles 'proguard.txt'
+    }
+
+//    lintOptions {
+//        xmlReport false
+//        warningsAsErrors true
+//        quiet false
+//        showAll true
+//        disable 'OldTargetApi'
+//    }
+}
+
+dependencies {
+    api 'cz.msebera.android:httpclient:4.5.8'
+    compileOnly 'org.conscrypt:conscrypt-android:2.4.0'
+}

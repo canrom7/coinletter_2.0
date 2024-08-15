@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/chat_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/search_cl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mergerStatus"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/msg_list_selector_background_ripple">
+
+        <ImageView
+            android:id="@+id/search_iv"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <TextView
+            android:id="@+id/search_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_15_text_size"
+            android:hint="@string/input_phone_number"
+            android:background="@null"
+            android:textColorHint="#8F9CBB"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:singleLine="true"
+            app:layout_constraintLeft_toRightOf="@+id/search_iv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/communication_rl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="13dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/search_cl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/communication_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_12_text_size"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_8C9AB8"
+            android:text="@string/my_communication_number"/>
+
+        <ImageView
+            android:id="@+id/qr_iv"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:src="@drawable/ic_qr"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/communication_tv"/>
+
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/msg_list_selector_background_ripple"
+        app:layout_constraintTop_toBottomOf="@+id/communication_rl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/phone_contact_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/phone_contact_iv"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/icon_phone"
+                android:layout_marginLeft="20dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/phone_contact_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_contact"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/phone_contact_iv"
+                />
+            <TextView
+                android:id="@+id/registered_phone_contacts_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_registered_phone_contacts"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/color_96"
+                android:textSize="@dimen/sp_12_text_size"
+                app:layout_constraintTop_toBottomOf="@+id/phone_contact_tv"
+                app:layout_constraintLeft_toRightOf="@+id/phone_contact_iv"
+                />
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="12dp"
+                android:src="@drawable/set_right"
+                android:layout_marginRight="12dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/dividing_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/color_F8"
+            app:layout_constraintTop_toBottomOf="@+id/phone_contact_cl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/sMS_invites_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividing_line">
+
+            <ImageView
+                android:id="@+id/invite_friends_iv"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/iv_sms_invites"
+                android:layout_marginLeft="20dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/invite_friends_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/invite_friends_tv"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/invite_friends_iv"
+                />
+            <TextView
+                android:id="@+id/sMS_invites_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SMS_invites_mobile_phone_address_book_friends"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/color_96"
+                android:textSize="@dimen/sp_12_text_size"
+                app:layout_constraintTop_toBottomOf="@+id/invite_friends_TV"
+                app:layout_constraintLeft_toRightOf="@+id/invite_friends_iv"
+                />
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="12dp"
+                android:src="@drawable/set_right"
+                android:layout_marginRight="12dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dynamic_cl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/chat_bg"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mergerStatus"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/start_search_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+            <View
+                android:id="@+id/dividing_line_v"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/line_color"/>
+            <EditText
+                android:id="@+id/search_edit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:background="@drawable/et_search_bg"
+                android:drawableLeft="@drawable/search"
+                android:drawablePadding="9dp"
+                android:paddingLeft="9dp"
+                android:textColorHint="#ded6e0"
+                android:textSize="@dimen/message_search_size"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividing_line_v"/>
+            <View
+                android:id="@+id/line_v"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="7dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_edit"
+                android:background="@color/line_color"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/gray_search_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/start_search_cl"
+            >
+
+            <ImageView
+                android:id="@+id/gray_search_iv"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_gray_search"
+                android:layout_marginLeft="23dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索："
+                android:textSize="@dimen/sp_15_text_size"
+                android:textColor="@color/color_8C9AB8"
+                android:layout_marginLeft="35dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/gray_search_iv"/>
+
+            <TextView
+                android:id="@+id/search_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:gravity="left"
+                android:textColor="@color/redpacket_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/search"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

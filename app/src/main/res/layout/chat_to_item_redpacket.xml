@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChattingLeftStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/time_tv"
+        style="@style/ChattingTimeStyle"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <com.iimm.miliao.view.HeadView
+        android:id="@+id/chat_head_iv"
+        style="@style/ChattingLeftAvatarStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_msc"
+        android:contentDescription="@string/app_name" />
+
+    <CheckBox
+        android:id="@+id/chat_msc"
+        style="@style/CustomCheckBoxTheme_new"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chat_head_iv"
+        android:clickable="false"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        style="@style/ChattingLeftContentStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_head_iv">
+
+        <TextView
+            android:id="@+id/nick_name"
+            style="@style/ChattingLeftNickNameStyle"
+            android:visibility="gone"
+            tools:text="sdfsdfs"
+            tools:visibility="visible" />
+
+
+        <RelativeLayout
+            android:id="@+id/chat_warp_view"
+            style="@style/ChattingLeftContentTextStyle"
+            android:layout_width="220dp"
+            android:layout_height="63dp"
+            android:layout_below="@id/nick_name"
+            android:background="@drawable/a_bg_for_chat_red1">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="35dp"
+                android:layout_height="41dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="11dp"
+                android:src="@drawable/ic_chat_hongbao" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@id/iv_image"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/chat_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="160dp"
+                    android:maxLines="1"
+                    android:text="@string/best_wishes"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/chat_text_size" />
+
+                <TextView
+                    android:id="@+id/chat_open"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="160dp"
+                    android:maxLines="1"
+                    android:text="@string/open_red_packet"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/chat_text_size" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="220dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/chat_warp_view"
+            android:layout_toRightOf="@id/chat_head_iv"
+            android:background="@drawable/a_bg_for_chat_red2"
+            android:gravity="center_vertical"
+            android:paddingLeft="13dp"
+            android:text="@string/chat_red"
+            android:textColor="#ff8c9ab8"
+            android:textSize="12sp" />
+
+        <include layout="@layout/view_holder_state_to" />
+    </RelativeLayout>
+</RelativeLayout>

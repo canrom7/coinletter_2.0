@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp55"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_square_rl"
+    >
+
+    <View
+        android:id="@+id/square_item_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/find_line"/>
+
+    <ImageView
+        android:id="@+id/square_item_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp20"
+        tools:src="@drawable/life_circle"/>
+
+    <TextView
+        android:id="@+id/square_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_toRightOf="@id/square_item_image"
+        tools:text="@string/life_circle2"
+        android:textColor="@color/msg_list_text_color"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/square_item_size_tv"
+        tools:text="99+"
+        tools:visibility="visible"
+        android:layout_width="@dimen/dp16"
+        android:layout_height="@dimen/dp16"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_toRightOf="@+id/square_item_tv"
+        android:background="@drawable/message_num_bg_by_has_push"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:textSize="@dimen/sp_11_text_size"/>
+
+    <ImageView
+        android:layout_width="7dp"
+        android:layout_height="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/find_return"/>
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/a_view_actionbar"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/departmentlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/chat_bg"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/contorll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#b2000000"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp50"
+            android:layout_marginRight="@dimen/dp10"
+            android:background="@drawable/round_withe_storek_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/department_add"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="添加部门"
+                android:textColor="@color/tool_bar_text_color"
+                android:textSize="@dimen/sp_14_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/pop_win_line" />
+
+            <TextView
+                android:id="@+id/companyname_update"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="修改团队名"
+                android:textColor="@color/tool_bar_text_color"
+                android:textSize="@dimen/sp_14_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/pop_win_line" />
+
+            <TextView
+                android:id="@+id/exit_company"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="解散/退出团队"
+                android:textColor="@color/tool_bar_text_color"
+                android:textSize="@dimen/sp_14_text_size" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

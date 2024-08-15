@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/voice_time_cl"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/Grey_100">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_voice"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/voice_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/voice_time_cl"
+        android:gravity="center"
+        android:textColor="@color/Grey_3A4"
+        android:textSize="@dimen/sp_15_text_size"
+        android:layout_marginLeft="12dp"
+        tools:text="00:00"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/fl_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="4dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/voice_anim_iv_left"
+            android:layout_width="26dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/voice_play_left"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/voice_time_tv_right"
+            android:layout_width="26dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_seek"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/fl_left"
+        android:visibility="gone">
+
+        <com.iimm.miliao.audio_x.XSeekBar
+            android:id="@+id/voice_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@id/fl_seek"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/voice_anim_iv_right"
+            android:layout_width="26dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/voice_play_right"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/voice_time_tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:maxWidth="100dp"
+            android:minWidth="26dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

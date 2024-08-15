@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp5"
+        android:paddingBottom="@dimen/dp5">
+
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/ll_new_friend"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp50"
+            android:paddingLeft="8dp"
+            android:paddingRight="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/iv_my_device_icon"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:src="@mipmap/black_list_square"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/new_friend_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/new_friend"
+                android:textColor="#222222"
+                android:textSize="@dimen/sp_16_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_my_device_icon"
+                app:layout_constraintLeft_toRightOf="@+id/iv_my_device_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_my_device_icon"/>
+
+            <TextView
+                android:id="@+id/new_friend_v"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/message_num_bg_by_has_push"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:textColor="@color/white"
+                tools:text="9"
+                android:paddingLeft="5.5dp"
+                android:paddingRight="5.5dp"
+                android:textSize="@dimen/sp_11_text_size"
+                app:layout_constraintTop_toTopOf="@+id/iv_my_device_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_my_device_icon"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/ll_group"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp50"
+            android:paddingLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_new_friend"
+            >
+
+            <ImageView
+                android:id="@+id/iv_my_black_list_icon"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:src="@mipmap/icon_group"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/group_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/group"
+                android:textColor="#222222"
+                android:textSize="@dimen/sp_16_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_my_black_list_icon"
+                app:layout_constraintLeft_toRightOf="@+id/iv_my_black_list_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_my_black_list_icon"/>
+
+            <View
+                android:id="@+id/group_v"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/my_tab_dian_bg"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintTop_toTopOf="@+id/group_tv"
+                app:layout_constraintLeft_toRightOf="@+id/group_tv"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/ll_tag"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp50"
+            android:paddingLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_group">
+
+            <ImageView
+                android:id="@+id/iv_my_tag_icon"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:src="@mipmap/tag_square"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/tag"
+                android:textColor="#222222"
+                android:textSize="@dimen/sp_16_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_my_tag_icon"
+                app:layout_constraintLeft_toRightOf="@+id/iv_my_tag_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_my_tag_icon"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/ll_my_colleague"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp50"
+            android:paddingLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_tag"
+            >
+
+            <ImageView
+                android:id="@+id/iv_my_colleague_icon"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:src="@mipmap/my_colleague_square"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/my_colleague"
+                android:textColor="#222222"
+                android:textSize="@dimen/sp_16_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_my_colleague_icon"
+                app:layout_constraintLeft_toRightOf="@+id/iv_my_colleague_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_my_colleague_icon"
+                />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

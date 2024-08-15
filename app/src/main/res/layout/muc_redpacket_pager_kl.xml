@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdge="none"
+    android:scrollbars="none"
+    android:background="@color/color_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <View
+            android:id="@+id/fengexian3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_alignParentTop="true"
+            android:background="@color/line_color"/>
+
+        <LinearLayout
+            android:id="@+id/redly2"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/fengexian3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/msg_list_selector_background_ripple"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/zje"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/total_money"
+                android:textColor="@color/tb_center_title_skin_simple_white"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+            <EditText
+                android:id="@+id/edit_money"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical|right"
+                android:hint="0.00"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textColor="@color/color_96"
+                android:textColorHint="@color/color_96"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+            <TextView
+                android:id="@+id/yuan"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:text="@string/rmb"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/redly1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/redly2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/msg_list_selector_background_ripple"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/hbgs"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/red_packet_count"
+                android:textColor="@color/tb_center_title_skin_simple_white"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+            <EditText
+                android:id="@+id/edit_redcount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/ge"
+                android:layout_weight="1"
+                android:background="@null"
+                android:digits="@string/digits_number"
+                android:gravity="center_vertical|right"
+                android:hint="@string/fill_in_the_number"
+                android:inputType="number"
+                android:maxLength="6"
+                android:singleLine="true"
+                android:textColor="@color/color_96"
+                android:textColorHint="@color/color_96"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+            <TextView
+                android:id="@+id/ge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/individual"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textviewtishi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/redly1"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/hint_red_packet_key"
+            android:textSize="@dimen/sp_14_text_size"/>
+
+        <LinearLayout
+            android:id="@+id/redly1_exclusive"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/textviewtishi"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:descendantFocusability="beforeDescendants"
+            android:background="@drawable/msg_list_selector_background_ripple"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/hbgs_exclusive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/who_can_take"
+                android:textColor="@color/tb_center_title_skin_simple_white"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+            <TextView
+                android:id="@+id/edit_redcount_exclusive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/ge"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical|right"
+                android:hint="@string/everyone_in_the_group"
+                android:singleLine="true"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_96"
+                android:textSize="@dimen/sp_16_text_size"/>
+
+            <ImageView
+                android:id="@+id/ge_exclusive"
+                android:layout_width="@dimen/dp7"
+                android:layout_height="@dimen/dp12"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/set_right"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textviewtishi_exclusive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/redly1_exclusive"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/hint_lucky_red_packet"
+            android:singleLine="true"
+            android:textColor="@color/color_96"
+            android:textSize="@dimen/sp_14_text_size"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/edit_blessing_ly"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/textviewtishi_exclusive"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/msg_list_selector_background_ripple"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/kl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical|left"
+                android:text="@string/set_red_packet_key"
+                android:textColor="@color/tb_center_title_skin_simple_white"
+                android:textSize="@dimen/sp_16_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/edit_password"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:gravity="center_vertical|right"
+                android:hint="@string/i_am_so_handsome"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_16_text_size"
+                android:textColorHint="@color/color_96"
+                android:textColor="@color/color_96"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/kl"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/money_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_blessing_ly"
+            android:layout_centerHorizontal="true"
+            android:text="￥0.00"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_40_text_size"/>
+        <Button
+            android:id="@+id/btn_sendRed"
+            style="@style/BossGreenBtn"
+            android:layout_height="44dp"
+            android:layout_below="@+id/money_tv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shape_red_packet"
+            android:text="@string/btn_send_red_packet"
+            android:textSize="@dimen/sp_16_text_size"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_sendRed"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/unclaimed_red_envelope"
+            android:textColor="@color/color_96"
+            android:textSize="@dimen/sp_16_text_size"
+            />
+
+        <!-- bug：群组发红包页面，从普通红包直接进入口令红包，在点击口令Edit，发现在华为与小米上唤醒不了软键盘 -->
+        <!-- solve：在调试时发现，口令红包页面哪个Edit请求焦点，直接点击那个Edit就唤醒不了软键盘，放置该隐形Edit坐下兼容 -->
+        <EditText
+            android:id="@+id/edit_compatible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/btn_sendRed"
+            android:layout_marginTop="20dp"
+            android:background="#0000"
+            android:clickable="false"
+            android:gravity="center_vertical|right"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textSize="@dimen/redpacket_text_size_label"/>
+
+    </RelativeLayout>
+</ScrollView>

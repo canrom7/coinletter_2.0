@@ -1,0 +1,527 @@
+<com.iimm.miliao.view.MyLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <ScrollView
+        android:id="@+id/top_sl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingRight="@dimen/dp10">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/avatar_cl"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/msg_list_selector_background_ripple"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp12">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/avatar"
+                        android:textColor="@color/Grey_3A4"
+                        android:textSize="@dimen/sp_15_text_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/avatar_img"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar_normal"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/right_iv"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:riv_border_color="@color/white"
+                        app:riv_corner_radius="4dp"
+                        app:riv_oval="false"/>
+
+
+                    <ImageView
+                        android:id="@+id/right_iv"
+                        android:layout_width="@dimen/dp7"
+                        android:layout_height="@dimen/dp12"
+                        android:src="@drawable/set_right"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:background="@drawable/msg_list_selector_background_ripple"
+                    >
+
+                    <TextView
+                        android:id="@+id/name_text"
+                        style="@style/IMTbleLine_info"
+                        android:text="昵称"
+                        app:layout_constraintBottom_toBottomOf="@+id/name_edit"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/name_edit"/>
+
+                    <com.iimm.miliao.view.ClearEditText
+                        android:id="@+id/name_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:hint="@string/please_input_name"
+                        android:inputType="text"
+                        android:maxLength="16"
+                        android:paddingLeft="@dimen/dp12"
+                        android:paddingRight="@dimen/dp12"
+                        android:textColor="@color/color_96"
+                        android:textColorHint="@color/color_96"
+                        android:textSize="@dimen/sp_15_text_size"
+                        app:layout_constraintLeft_toRightOf="@+id/name_text"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <View
+                        android:id="@+id/name_edit_v"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_color"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/name_edit"/>
+
+                    <TextView
+                        android:id="@+id/sex_text"
+                        style="@style/IMTbleLine_info"
+                        android:layout_height="55dp"
+                        android:text="性别"
+                        android:gravity="center_vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/name_edit_v"
+                        />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/sex_cl"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/shape_info_bg"
+                        app:layout_constraintTop_toTopOf="@+id/sex_text"
+                        app:layout_constraintBottom_toBottomOf="@+id/sex_text"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/name_edit_v">
+
+                        <TextView
+                            android:id="@+id/sex_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/girl_tv"
+                            android:text="男"/>
+                        <TextView
+                            android:id="@+id/girl_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            app:layout_constraintLeft_toRightOf="@+id/sex_tv"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:text="女"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+
+                    <View
+                        android:id="@+id/sex_v"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_color"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sex_text"/>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/birthday_select_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sex_v">
+
+                        <TextView
+                            android:id="@+id/birthday_text"
+                            style="@style/IMTbleLine_info"
+                            android:text="出生日期"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/birthday_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="12dp"
+                            android:textColor="@color/color_96"
+                            android:textSize="@dimen/sp_15_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/birthday_text"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="@string/about_me"/>
+                    </android.support.constraint.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/birthday_select_v"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_color"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthday_select_rl"/>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/city_select_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/birthday_select_v"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/city_text"
+                            style="@style/IMTbleLine_info"
+                            android:text="城市"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+                        <TextView
+                            android:id="@+id/city_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right|center_vertical"
+                            android:textColor="@color/color_96"
+                            android:textSize="@dimen/sp_15_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/city_text"
+                            app:layout_constraintRight_toLeftOf="@+id/city_arrow_img"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="上海"/>
+
+                        <ImageView
+                            android:id="@+id/city_arrow_img"
+                            android:layout_width="@dimen/dp7"
+                            android:layout_height="@dimen/dp12"
+                            android:layout_marginRight="12dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/set_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/line_height"
+                            android:background="@color/line_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/qccodefortig"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/city_select_rl">
+
+                        <TextView
+                            android:id="@+id/city_text_02"
+                            style="@style/IMTbleLine_info"
+                            android:text="我的二维码"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_qr_code"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/city_arrow_img_02"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/city_arrow_img_02"
+                            android:layout_width="7dp"
+                            android:layout_height="@dimen/dp12"
+                            android:layout_marginRight="12dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/set_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/diy_name_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/qccodefortig"
+                        tools:visibility="visible">
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/line_height"
+                            android:background="@color/line_color"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+
+                        <TextView
+                            android:id="@+id/iv_diy_name"
+                            style="@style/IMTbleLine_info"
+                            android:text="@string/diy_name"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_diy_name"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="center_vertical|right"
+                            android:paddingLeft="8dp"
+                            android:textColor="@color/color_96"
+                            android:textSize="@dimen/sp_15_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/iv_diy_name"
+                            app:layout_constraintRight_toLeftOf="@+id/iv_diy_next"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="个性签名"
+                            />
+
+                        <ImageView
+                            android:id="@+id/iv_diy_next"
+                            android:layout_width="@dimen/dp7"
+                            android:layout_height="@dimen/dp12"
+                            android:layout_marginRight="12dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/set_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/msg_list_selector_background_ripple"
+                    android:paddingRight="12dp"
+                    >
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/phone_cl"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp55"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvPhoneNumber"
+                            style="@style/IMTbleLine_info"
+                            android:text="@string/my_phone_number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/phone_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:textColor="@color/color_96"
+                            android:gravity="right|center_vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/tvPhoneNumber"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/phone_v"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_color"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/phone_cl"/>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/easy_account_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/phone_v">
+
+                        <TextView
+                            android:id="@+id/easy_account_desc_tv"
+                            style="@style/IMTbleLine_info"
+                            android:text="账号"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/easy_account_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="right|center_vertical"
+                            android:textColor="@color/color_96"
+                            android:textSize="@dimen/sp_15_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/easy_account_desc_tv"
+                            app:layout_constraintRight_toLeftOf="@+id/city_arrow_img_05"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="账号"/>
+
+                        <ImageView
+                            android:id="@+id/city_arrow_img_05"
+                            android:layout_width="7dp"
+                            android:layout_height="12dp"
+                            android:layout_marginLeft="8dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/set_right"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/easy_account_tv"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:visibility="visible"/>
+                    </android.support.constraint.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/easy_account_v"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_color"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/easy_account_rl"/>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/rlInviteCode"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/easy_account_v"
+                        >
+
+                        <TextView
+                            style="@style/IMTbleLine_info"
+                            android:text="@string/invite_code"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <!--android:selectAllOnFocus="true"-->
+                        <TextView
+                            android:id="@+id/invite_code_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/color_96"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/sp_15_text_size"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="邀请码"
+                            />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/next_step_btn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_below="@+id/ls"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/shape_transfer"
+                android:gravity="center"
+                android:text="更新"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16_text_size"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</com.iimm.miliao.view.MyLinearLayout>

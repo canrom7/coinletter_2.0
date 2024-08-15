@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/search_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_white"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_color"/>
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/search"
+                android:paddingLeft="15dp"
+                android:drawablePadding="9dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/et_search_bg"
+                android:hint="@string/search_for_contacts"
+                android:singleLine="true"
+                android:textCursorDrawable="@color/main_color"
+                android:textSize="@dimen/message_search_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginTop="7dp"
+                android:background="@color/line_color"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.iimm.miliao.view.PullToRefreshSlideListView
+                android:id="@+id/pull_refresh_list"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/color_F8"
+                android:dividerPadding="1dp"
+                app:ptrAnimationStyle="flip"
+                app:ptrDrawableEnd="@drawable/default_ptr_rotate"
+                app:ptrDrawableStart="@drawable/default_ptr_flip"
+                app:ptrHeaderTextColor="@color/black"
+                app:ptrMode="disabled"
+                app:ptrOverScroll="false"
+                app:ptrListViewExtrasEnabled="false"
+                app:ptrShowIndicator="false"
+                app:slideMode="right"
+                app:slideRightAction="reveal"
+                />
+
+            <TextView
+                android:id="@+id/text_dialog"
+                android:layout_width="80.0dip"
+                android:layout_height="80.0dip"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_slide_selected"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30.0dip"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:id="@+id/fl_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableBottom="@drawable/icon_not_found"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="@string/no_data"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/SmallerTextSize"/>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <com.iimm.miliao.sortlist.SideBar
+            android:id="@+id/sidebar"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

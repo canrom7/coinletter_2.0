@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/chat_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <RelativeLayout
+        android:id="@+id/local_course_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp55"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/msg_list_selector_background"
+        android:paddingLeft="@dimen/dp20"
+        android:paddingRight="@dimen/dp12"
+        android:visibility="visible"
+        >
+
+        <TextView
+            android:id="@+id/my_course_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/telephone_hint"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_15_text_size"/>
+
+        <TextView
+            android:id="@+id/tv_bind_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/image"
+            android:textColor="@color/color_96"
+            android:textSize="@dimen/sp_15_text_size"
+            tools:text="123123123"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/dp7"
+            android:layout_height="@dimen/dp12"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/set_right"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/IMTbleLine_TextName"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:text="@string/associate_a_third_party_social_account"
+        android:textColor="@color/color_8C9AB8"
+        android:textSize="@dimen/dp12"/>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/msg_list_selector_background"
+        app:divider="@drawable/line"
+        app:showDividers="middle"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/wx_band_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:paddingLeft="@dimen/dp20"
+            android:paddingRight="@dimen/dp12"
+            >
+
+            <ImageView
+                android:id="@+id/image_left_wechat"
+                android:layout_width="@dimen/dp25"
+                android:layout_height="@dimen/dp25"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_wx_login"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp12"
+                android:layout_toRightOf="@+id/image_left_wechat"
+                android:text="@string/wechat"/>
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/tv_bind_wx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                app:sb_background="@color/app_white"
+                app:sb_checked_color="@color/color_00"
+                app:sb_effect_duration="100"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false"/>
+
+            <View
+                android:id="@+id/tv_bind_wx_view"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/qq_band_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:paddingLeft="@dimen/dp20"
+            android:paddingRight="@dimen/dp12">
+
+            <ImageView
+                android:id="@+id/image_left_qq"
+                android:layout_width="@dimen/dp25"
+                android:layout_height="@dimen/dp25"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_qq_button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp12"
+                android:layout_toRightOf="@+id/image_left_qq"
+                android:text="QQ"/>
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/tv_bind_qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                app:sb_background="@color/app_white"
+                app:sb_checked_color="@color/color_00"
+                app:sb_effect_duration="100"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false"/>
+
+            <View
+                android:id="@+id/tv_bind_qq_view"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</LinearLayout>

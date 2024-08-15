@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/app_white"
+    android:descendantFocusability="blocksDescendants">
+
+    <CheckBox
+        android:id="@+id/see_check_box"
+        style="@style/CustomCheckBoxTheme_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_toLeftOf="@id/edit_label_iv"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@+id/see_check_box"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/one_level_title"
+            tools:text="开始减肥会计师法士大夫" />
+
+        <TextView
+            android:id="@+id/label_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text=""
+            android:layout_marginTop="4dp"
+            android:textColor="@color/Grey_400"
+            android:textSize="@dimen/two_level_content"
+            tools:text="开始减肥会计师法士大夫"
+            tools:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/edit_label_iv"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:padding="15dp"
+        android:src="@drawable/icg" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/line_color" />
+
+</RelativeLayout>

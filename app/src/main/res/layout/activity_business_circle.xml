@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_white"
+    >
+
+    <com.iimm.miliao.view.ResizeLayout
+        android:id="@+id/resize_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/pull_refresh_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_view"
+            android:layout_marginTop="-2dp"
+            android:fadingEdge="none"
+            android:scrollbars="none"
+            ptr:ptrAnimationStyle="flip"
+            ptr:ptrDrawableEnd="@drawable/default_ptr_rotate"
+            ptr:ptrDrawableStart="@drawable/default_ptr_flip"
+            ptr:ptrHeaderTextColor="@color/black"
+            ptr:ptrMode="both"
+            ptr:ptrOverScroll="false"
+            ptr:ptrScrollingWhileRefreshingEnabled="true"
+            ptr:ptrShowIndicator="false"/>
+
+        <com.iimm.miliao.view.PMsgBottomView
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"/>
+
+    </com.iimm.miliao.view.ResizeLayout>
+
+    <View
+        android:id="@+id/placeholder_v"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/placeholder_v"
+        android:padding="0dp"
+        app:contentInsetStart="0dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/tool_bar_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <com.iimm.miliao.view.CheckableImageView
+                android:id="@+id/iv_title_left"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/checkable_back"
+                />
+
+            <TextView
+                android:id="@+id/tv_title_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="middle"
+                android:maxWidth="200dp"
+                android:singleLine="true"
+                android:text="朋友圈"
+                android:textColor="@color/tool_bar_text_color"
+                android:textSize="@dimen/title_center_text_size"
+                />
+
+            <com.iimm.miliao.view.CheckableImageView
+                android:id="@+id/iv_title_right"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/checkable_camera"
+                />
+
+            <View
+                android:id="@+id/line_v"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_alignParentBottom="true"
+                android:background="@color/line_color"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+</RelativeLayout>

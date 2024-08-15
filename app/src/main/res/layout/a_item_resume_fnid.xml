@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_pin_yin"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/f6f7fB"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:textColor="@color/color_8C9AB8"
+        android:textSize="16sp"
+        tools:text="A" />
+
+
+    <TextView
+        android:id="@+id/tv_title_fnid_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/tv_pin_yin"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/one_level_title"
+        tools:text="思考发动机" />
+
+
+    <TextView
+        android:id="@+id/tv_area_code"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/tv_pin_yin"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/Grey_3A4"
+        android:textSize="@dimen/title_left_text_size"
+        tools:text="+86" />
+</RelativeLayout>

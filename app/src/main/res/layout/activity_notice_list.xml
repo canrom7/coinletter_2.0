@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_db"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.iimm.miliao.view.PullToRefreshSlideListView
+            android:id="@+id/pull_refresh_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ptrAnimationStyle="flip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:divider="#00000000"
+            android:dividerHeight="12dp"
+            app:ptrDrawableEnd="@drawable/default_ptr_rotate"
+            app:ptrDrawableStart="@drawable/default_ptr_flip"
+            app:ptrHeaderTextColor="@color/black"
+            android:background="@color/f6f7fB"
+            app:ptrMode="both"
+            app:ptrOverScroll="false"
+            app:ptrScrollingWhileRefreshingEnabled="true"
+            app:ptrShowIndicator="false"
+            app:slideMode="right"
+            app:slideRightAction="reveal"/>
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableBottom="@drawable/icon_not_found"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/no_notice"
+            android:textColor="@color/black"
+            android:textSize="@dimen/SmallerTextSize"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+</LinearLayout>

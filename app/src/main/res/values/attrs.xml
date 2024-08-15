@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Defines the custom XML attributes supported for a ChatFaceView(表情布局) -->
+    <declare-styleable name="ChatFaceView">
+        <attr name="hasGif" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="stl_SmartTabLayout">
+        <attr name="stl_indicatorAlwaysInCenter" format="boolean" />
+        <attr name="stl_indicatorWithoutPadding" format="boolean" />
+        <attr name="stl_indicatorInFront" format="boolean" />
+        <attr name="stl_indicatorInterpolation" format="enum">
+            <enum name="smart" value="0" />
+            <enum name="linear" value="1" />
+        </attr>
+        <attr name="stl_indicatorGravity" format="enum">
+            <enum name="bottom" value="0" />
+            <enum name="top" value="1" />
+            <enum name="center" value="2" />
+        </attr>
+        <attr name="stl_indicatorColor" format="color" />
+        <attr name="stl_indicatorColors" format="reference" />
+        <attr name="stl_indicatorThickness" format="dimension" />
+        <attr name="stl_indicatorWidth" format="dimension">
+            <enum name="auto" value="-1" />
+        </attr>
+        <attr name="stl_indicatorCornerRadius" format="dimension" />
+        <attr name="stl_overlineColor" format="color" />
+        <attr name="stl_overlineThickness" format="dimension" />
+        <attr name="stl_underlineColor" format="color" />
+        <attr name="stl_underlineThickness" format="dimension" />
+        <attr name="stl_dividerColor" format="color" />
+        <attr name="stl_dividerColors" format="reference" />
+        <attr name="stl_dividerThickness" format="dimension" />
+        <attr name="stl_defaultTabBackground" format="reference" />
+        <attr name="stl_defaultTabTextAllCaps" format="boolean" />
+        <attr name="stl_defaultTabTextColor" format="color|reference" />
+        <attr name="stl_defaultTabTextSize" format="dimension" />
+        <attr name="stl_defaultTabTextHorizontalPadding" format="dimension" />
+        <attr name="stl_defaultTabTextMinWidth" format="dimension" />
+        <attr name="stl_customTabTextLayoutId" format="reference" />
+        <attr name="stl_customTabTextViewId" format="reference" />
+        <attr name="stl_distributeEvenly" format="boolean" />
+        <attr name="stl_clickable" format="boolean" />
+        <attr name="stl_titleOffset" format="dimension">
+            <enum name="auto_center" value="-1" />
+        </attr>
+        <attr name="stl_drawDecorationAfterTab" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="kswThumbDrawable" format="reference" />
+        <attr name="kswThumbColor" format="color|reference" />
+        <attr name="kswThumbMargin" format="dimension|reference" />
+        <attr name="kswThumbMarginTop" format="dimension|reference" />
+        <attr name="kswThumbMarginBottom" format="dimension|reference" />
+        <attr name="kswThumbMarginLeft" format="dimension|reference" />
+        <attr name="kswThumbMarginRight" format="dimension|reference" />
+        <attr name="kswThumbWidth" format="dimension|reference" />
+        <attr name="kswThumbHeight" format="dimension|reference" />
+        <attr name="kswThumbRadius" format="dimension|reference" />
+        <attr name="kswBackRadius" format="dimension|reference" />
+        <attr name="kswBackDrawable" format="reference" />
+        <attr name="kswBackColor" format="color|reference" />
+        <attr name="kswFadeBack" format="boolean" />
+        <attr name="kswBackMeasureRatio" format="float" />
+        <attr name="kswAnimationDuration" format="integer" />
+        <attr name="kswTintColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ChatImageView">
+        <attr name="chat_direction" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SearchBarView">
+        <attr name="search_bar_color" format="color|reference" />
+        <attr name="search_bar_position" format="enum">
+            <enum name="position_left" value="4" />
+            <enum name="position_right" value="1" />
+        </attr>
+        <attr name="search_bar_status" format="enum">
+            <enum name="status_close" value="4" />
+            <enum name="status_open" value="1" />
+        </attr>
+        <attr name="search_bar_duration" format="integer" />
+        <attr name="search_bar_hint_text" format="string|reference" />
+        <attr name="search_bar_icon" format="reference" />
+        <attr name="search_bar_hint_text_color" format="color|reference" />
+        <attr name="search_bar_hint_text_size" format="dimension|reference" />
+    </declare-styleable>
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+    <declare-styleable name="ControlFontSize">
+        <attr name="lineColor" format="color|reference" />
+        <attr name="lineWidth" format="dimension|reference" />
+        <attr name="totalCount" format="integer" />
+        <attr name="circleColor" format="color|reference" />
+        <attr name="circleRadius" format="dimension|reference" />
+    </declare-styleable>
+
+    <attr name="iconSize" format="dimension" />
+    <attr name="iconMargin" format="dimension" />
+    <attr name="iconSrc" format="reference" />
+    <attr name="iconLeft" format="reference" />
+    <attr name="iconRight" format="reference" />
+    <attr name="duration_max" format="integer" />
+    <declare-styleable name="JCameraView">
+        <attr name="iconSize" />
+        <attr name="iconMargin" />
+        <attr name="iconSrc" />
+        <attr name="iconLeft" />
+        <attr name="iconRight" />
+        <attr name="duration_max" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomCancelView">
+        <attr name="view_radius" format="dimension" />
+        <attr name="view_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CalendarView">
+        <!--是否显示农历-->
+        <attr name="show_lunar" format="boolean" />
+        <!--是否显示上月和下月-->
+        <attr name="show_last_next" format="boolean" />
+        <!--是否显示节假日-->
+        <attr name="show_holiday" format="boolean" />
+        <!--是否显示节气-->
+        <attr name="show_term" format="boolean" />
+        <!--阳历的日期颜色-->
+        <attr name="solar_color" format="color" />
+        <!--阳历的日期尺寸-->
+        <attr name="solar_size" format="integer" />
+        <!--农历的日期颜色-->
+        <attr name="lunar_color" format="color" />
+        <!--农历的日期尺寸-->
+        <attr name="lunar_size" format="integer" />
+        <!--节日文字颜色-->
+        <attr name="holiday_color" format="color" />
+
+        <!--选中的日期文字颜色-->
+        <attr name="choose_color" format="color" />
+        <!--选中的日期背景-->
+        <attr name="day_bg" format="reference" />
+
+        <!--当前的日期文字颜色-->
+        <attr name="today_color" format="color" />
+        <!--当前的日期背景-->
+        <attr name="today_bg" format="reference" />
+
+        <!--单选时切换月份，是否选中上次的日期-->
+        <attr name="switch_choose" format="boolean" />
+        <!--设置单选、多选-->
+        <attr name="choose_type" format="enum">
+            <enum name="single" value="0" />
+            <enum name="multi" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="WeekView">
+        <!--周的表示形式（x.x.x.x.x.x.x）-->
+        <attr name="week_str" format="string" />
+        <!--周的文字颜色-->
+        <attr name="week_color" format="color" />
+        <!--周的文字大小-->
+        <attr name="week_size" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeLayout">
+        <attr name="drag_edge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+        <attr name="leftEdgeSwipeOffset" format="dimension" />
+        <attr name="rightEdgeSwipeOffset" format="dimension" />
+        <attr name="topEdgeSwipeOffset" format="dimension" />
+        <attr name="bottomEdgeSwipeOffset" format="dimension" />
+        <attr name="show_mode" format="enum">
+            <enum name="lay_down" value="0" />
+            <enum name="pull_out" value="1" />
+        </attr>
+        <attr name="clickToClose" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="GifTextureView">
+        <attr name="gifSource" format="reference|string"/>
+        <attr name="isOpaque" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="GifView">
+
+        <attr name="freezesAnimation" format="boolean"/>
+
+        <attr name="loopCount" format="integer"/>
+
+</declare-styleable>
+
+</resources>

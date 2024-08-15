@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/item"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:paddingLeft="@dimen/dp12"
+            android:paddingRight="@dimen/dp10">
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="@dimen/dp55"
+                android:layout_height="@dimen/dp55"
+                android:background="@drawable/delete_blance" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/item_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp12"
+            android:layout_marginRight="@dimen/dp10"
+            android:background="@drawable/msg_list_selector_background"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp15">
+
+            <ImageView
+                android:id="@+id/itemlogo"
+                android:layout_width="@dimen/dp25"
+                android:layout_height="@dimen/dp25"
+                android:layout_centerVertical="true"
+                tools:src="@drawable/alipay_logo" />
+
+            <TextView
+                android:id="@+id/itemcomtent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@+id/select"
+                android:layout_toRightOf="@+id/itemlogo"
+                android:singleLine="true"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="16sp"
+                tools:text="dfsfsd" />
+
+
+            <ImageView
+                android:id="@+id/select"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp14"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_select"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </com.daimajia.swipe.SwipeLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_ali_pay"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <ImageView
+            android:src="@drawable/alipay_logo"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:text="@string/alipay_pay"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_17_text_size" />
+
+        <ImageView
+            android:id="@+id/iv_ali"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/sel_check_wx_new" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_ali_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="16dp">
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_wx_pay"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:src="@drawable/wx_pay_logo"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:text="@string/weixin_pay"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_17_text_size" />
+
+        <ImageView
+            android:id="@+id/iv_wx"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/sel_nor_wx2" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_wx_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="16dp">
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bank_card"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:src="@mipmap/bank_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:text="@string/bank_card_pay"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_17_text_size" />
+
+        <ImageView
+            android:id="@+id/iv_card"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/sel_nor_wx2" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_bank_card_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="16dp">
+
+
+    </FrameLayout>
+</LinearLayout>

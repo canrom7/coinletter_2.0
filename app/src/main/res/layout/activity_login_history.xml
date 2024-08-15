@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/avatar_img"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="41dip"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar_normal" />
+
+            <TextView
+                android:id="@+id/nick_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:gravity="center"
+                android:padding="0dp"
+                android:textColor="@color/tool_bar_text_color"
+                android:textSize="@dimen/sp_16_text_size"
+                tools:text="所开发的技术打法" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:gravity="center_vertical">
+
+                <com.iimm.miliao.view.ClearEditText
+                    android:id="@+id/password_edit"
+                    style="@style/EditTextWithLeftIcon"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:digits="@string/digits_password"
+                    android:hint="@string/please_input_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:paddingLeft="16dp"
+                    android:textColor="@color/tool_bar_text_color"
+                    android:textColorHint="@color/color_cc"
+                    android:textSize="@dimen/one_level_title" />
+
+                <ToggleButton
+                    android:id="@+id/tbEye"
+                    style="@style/PasswordEye"
+                    android:layout_marginRight="16dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/login_btn"
+                style="@style/BossGreenBtn"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/shape_transfer"
+                android:text="@string/login"
+                android:textSize="@dimen/sp_16_text_size" />
+
+
+            <Button
+                android:id="@+id/register_account_btn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:gravity="center"
+                android:text="@string/register_account"
+                android:textColor="@color/color_8C9AB8"
+                android:textSize="@dimen/sp_16_text_size" />
+
+
+            <Button
+                android:id="@+id/b_switch_account"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:gravity="center"
+                android:text="@string/switch_account"
+                android:textColor="@color/color_8C9AB8"
+                android:textSize="@dimen/sp_16_text_size" />
+
+            <Button
+                android:id="@+id/forget_password_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="12dp"
+                android:background="@null"
+                android:paddingRight="10dp"
+                android:paddingBottom="9dp"
+                android:text="@string/forget_password"
+                android:textColor="@color/color_b5c0d2"
+                android:textSize="@dimen/sp_12_text_size"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <solid android:color="@color/white"/>
+            <corners android:radius="@dimen/dp10"/>
+            <stroke
+                android:width="@dimen/line_height"
+                android:color="@color/frame_stroke"/>
+        </shape>
+    </item>
+    <item
+        android:right="@dimen/dp12">
+        <bitmap
+            android:gravity="right"
+            android:src="@drawable/right_botton"/>
+    </item>
+
+</layer-list>

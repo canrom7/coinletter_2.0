@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChattingLeftStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/time_tv"
+        style="@style/ChattingTimeStyle"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <com.iimm.miliao.view.HeadView
+        android:id="@+id/chat_head_iv"
+        style="@style/ChattingLeftAvatarStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_msc"
+        android:contentDescription="@string/app_name" />
+
+    <CheckBox
+        android:id="@+id/chat_msc"
+        style="@style/CustomCheckBoxTheme_new"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chat_head_iv"
+        android:clickable="false"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        style="@style/ChattingLeftContentStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_head_iv">
+
+        <TextView
+            android:id="@+id/nick_name"
+            style="@style/ChattingLeftNickNameStyle"
+            android:visibility="gone"
+            tools:text="sdfsdfs"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/chat_warp_view"
+            style="@style/ChattingLeftContentTextStyle"
+            android:layout_below="@id/nick_name"
+            android:layout_toRightOf="@id/chat_head_iv"
+            android:background="@drawable/chat_to_warp_bg"
+            android:minHeight="@dimen/chat_pop_min_hight"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/chat_text_img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/chat_to_voice_call_bg" />
+
+            <TextView
+                android:id="@+id/chat_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@id/chat_text_img"
+                android:maxWidth="210dp"
+                android:paddingLeft="@dimen/chat_text_left_pd"
+                android:paddingRight="@dimen/chat_text_right_pd"
+                android:text="已取消"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/view_holder_state_to" />
+    </RelativeLayout>
+
+</RelativeLayout>

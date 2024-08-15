@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_red"
+        android:layout_width="match_parent"
+        android:layout_height="435dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@mipmap/red_packet_bg">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/icon_close_white" />
+
+        <com.iimm.miliao.view.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            tools:src="@drawable/default_head" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/color_ffe2b1"
+            android:textSize="@dimen/sp_18_text_size"
+            tools:text="xx的红包" />
+
+        <TextView
+            android:id="@+id/sent_you_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="@string/i_sent_you_a_red_envelope"
+            android:textColor="@color/color_ffe2b1"
+            android:textSize="@dimen/sp_14_text_size" />
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sent_you_tv"
+            android:layout_marginTop="@dimen/dp24"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/color_ffe2b1"
+            android:textSize="22sp"
+            tools:text="@string/best_wishes" />
+
+        <ImageView
+            android:id="@+id/iv_open"
+            android:layout_width="102dp"
+            android:layout_height="102dp"
+            android:layout_below="@+id/tv_msg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:background="@mipmap/icon_open_red_packet1" />
+
+        <TextView
+            android:id="@+id/red_packet_privilege_tv"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/iv_open"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/shape_privilege_5dp"
+            android:gravity="center"
+            android:text="@string/privilege"
+            android:textColor="@color/pop_win_text_color"
+            android:textSize="@dimen/sp_14_text_size" />
+
+        <TextView
+            android:id="@+id/status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_open"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="47dp"
+            android:text="@string/view_picking_details"
+            android:textColor="@color/color_ffe2b1"
+            android:textSize="@dimen/sp_14_text_size"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/iv_open"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="59dp"
+            android:src="@mipmap/ic_plum_blossom" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_red_privilege"
+        android:layout_width="match_parent"
+        android:layout_height="435dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@mipmap/red_privilege_bg"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_close_privilege"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/icon_close_white" />
+
+        <TextView
+            android:id="@+id/privilege_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="@string/privilege"
+            android:textColor="@color/color_ffe2b1"
+            android:textSize="@dimen/sp_18_text_size" />
+
+        <TextView
+            android:id="@+id/privilege_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/privilege_title_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:text="@string/please_set_the_amount"
+            android:textColor="@color/color_ffe2b1"
+            android:textSize="@dimen/sp_15_text_size" />
+
+        <LinearLayout
+            android:id="@+id/privilege_amount_s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/privilege_amount_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/bottom_ten_et1"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:background="@drawable/shape_privilege_1dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:hint="0"
+                android:textColorHint="@color/color_ffe2b1"
+                android:textColor="@color/color_ffe2b1"
+                android:textSize="35sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:layout_marginLeft="@dimen/dp12"
+                android:textColor="@color/color_ffe2b1"
+                android:textSize="35sp"/>
+
+            <EditText
+                android:id="@+id/bottom_ten_et"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:background="@drawable/shape_privilege_1dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:hint="0"
+                android:textColorHint="@color/color_ffe2b1"
+                android:textColor="@color/color_ffe2b1"
+                android:layout_marginLeft="@dimen/dp12"
+                android:textSize="35sp" />
+
+            <EditText
+                android:id="@+id/bottom_single_digit_et"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:background="@drawable/shape_privilege_1dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:layout_marginLeft="@dimen/dp12"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:hint="0"
+                android:textColorHint="@color/color_ffe2b1"
+                android:textColor="@color/color_ffe2b1"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bottom_privilege_tv"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/privilege_amount_s"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_privilege_5dp"
+            android:gravity="center"
+            android:text="@string/privilege"
+            android:textColor="@color/pop_win_text_color"
+            android:textSize="@dimen/sp_14_text_size" />
+
+        <TextView
+            android:id="@+id/bottom_ordinary_opening_tv"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/bottom_privilege_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_privilege_5dp"
+            android:gravity="center"
+            android:text="@string/ordinary_opening"
+            android:textColor="@color/pop_win_text_color"
+            android:textSize="@dimen/sp_14_text_size" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

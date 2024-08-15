@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chat_bg"
+    >
+
+    <include
+        android:id="@+id/change_phone_toobar"
+        layout="@layout/a_view_actionbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/change_phone_llc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp12"
+        android:layout_marginRight="@dimen/dp12"
+        android:background="@drawable/msg_list_selector_background"
+        android:orientation="vertical"
+        app:divider="@drawable/line"
+        android:layout_marginTop="@dimen/dp12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/change_phone_toobar"
+        app:showDividers="middle"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp16"
+            android:paddingRight="@dimen/dp12">
+
+            <TextView
+                android:id="@+id/tv_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:text="+86"
+                android:textColor="@color/pop_win_text_color"
+                android:textSize="@dimen/sp_15_text_size"/>
+
+
+            <EditText
+                android:id="@+id/phone_numer_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/phone_number_hint"
+                android:inputType="number"
+                android:padding="2dp"
+                android:textColor="@color/pop_win_text_color"
+                android:textColorHint="@color/color_cc"
+                android:textSize="@dimen/one_level_title"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/change_phone_codell_iv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingRight="4dp"
+            android:visibility="visible"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/change_phone_graphic_code_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/show_background"
+                android:hint="输入图形码"
+                android:paddingLeft="@dimen/dp16"
+                android:layout_weight="1"
+                android:textColor="@color/pop_win_text_color"
+                android:textColorHint="@color/color_cc"
+                android:textSize="@dimen/one_level_title"
+                />
+            <ImageView
+                android:id="@+id/change_phone_graphic_code_iv"
+                android:layout_weight="2.5"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/change_phone_verification_code_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp">
+
+
+                <EditText
+                    android:id="@+id/change_phone_verification_code_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:digits="@string/digits_number"
+                    android:hint="@string/verification_code"
+                    android:inputType="number"
+                    android:textColor="@color/pop_win_text_color"
+                    android:textColorHint="@color/color_cc"
+                    android:textSize="@dimen/one_level_title"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/change_phone_verification_code_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bt_selector_w_g"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:enabled="true"
+                android:text="@string/get_msg_code"
+                android:textColor="@color/bt_3a4_8f9cbb_enable"
+                android:textSize="@dimen/sp_15_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp16"
+            android:paddingRight="@dimen/dp12">
+
+            <EditText
+                android:id="@+id/password_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:digits="@string/digits_password"
+                android:hint="@string/please_enter_your_password"
+                android:inputType="textPassword"
+                android:textColor="@color/pop_win_text_color"
+                android:textColorHint="@color/color_cc"
+                android:textSize="@dimen/one_level_title"/>
+
+            <ToggleButton
+                android:id="@+id/tbEye"
+                style="@style/PasswordEye"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp16"
+            android:paddingRight="@dimen/dp12">
+
+            <EditText
+                android:id="@+id/password_confirm_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:digits="@string/digits_password"
+                android:hint="@string/please_confirm_your_password"
+                android:inputType="textPassword"
+                android:textColor="@color/pop_win_text_color"
+                android:textColorHint="@color/color_cc"
+                android:textSize="@dimen/one_level_title"/>
+
+            <ToggleButton
+                android:id="@+id/confirm_tbEye"
+                style="@style/PasswordEye"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <Button
+        android:id="@+id/confirm_btn"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_transfer"
+        android:text="@string/sure"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16_text_size"
+        app:layout_constraintTop_toBottomOf="@+id/change_phone_llc"/>
+
+
+</android.support.constraint.ConstraintLayout>

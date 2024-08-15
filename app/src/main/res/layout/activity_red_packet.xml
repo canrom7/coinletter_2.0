@@ -1,0 +1,274 @@
+<layout>
+    <data>
+        <import type="android.text.TextUtils" />
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="com.payeasenet.wepay.ui.viewModel.RedPacketModel" />
+    </data>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/windowBackground"
+        tools:context=".ui.activity.RedPacketActivity">
+
+        <include layout="@layout/toolbar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rl_target_walletId"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:visibility="@{data.isSingle? View.VISIBLE : View.GONE}"
+            android:background="@color/white"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="接受钱包ID"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_receiver"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:text="@={data.targetWalletId}"
+                android:background="@null"
+                android:digits="@string/number"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:maxLength="17"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf= "@+id/tv_receiver"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_marginLeft="16dp"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rl_target_walletId"
+           android:background="@color/white"
+           android:id="@+id/card_view"
+           android:layout_marginTop="20dp"
+           android:visibility="@{data.isSingle? View.VISIBLE : View.GONE}"
+           app:cardCornerRadius="4dp"
+           android:layout_marginRight="16dp"
+           android:layout_height="145dp">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_marginLeft="16dp"
+                   android:text="红包金额"
+                   android:textColor="@color/lesserText"
+                   android:layout_marginTop="20dp"
+                   android:id="@+id/tv"
+                   android:textSize="14sp"
+                   android:layout_height="wrap_content"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_marginLeft="16dp"
+               android:text="¥"
+               android:layout_below="@+id/tv"
+               android:textColor="@color/black"
+               android:layout_marginTop="28dp"
+               android:textSize="36sp"
+               android:id="@+id/tv_symbol"
+               android:layout_height="wrap_content"/>
+               <android.support.v7.widget.AppCompatEditText
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="16dp"
+                   android:text="@={data.amount}"
+                   android:background="@null"
+                   android:id="@+id/amount"
+                   android:digits="@string/digits_amount"
+                   android:layout_below="@+id/tv"
+                   android:layout_toRightOf="@+id/tv_symbol"
+                   android:textColor="@color/black"
+                   android:inputType="numberDecimal"
+                   android:layout_marginTop="28dp"
+                   android:textSize="36sp"
+                   android:layout_height="wrap_content"/>
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rl_amount"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:background="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft= "16dp"
+            android:visibility="@{ !data.isSingle? View.VISIBLE : View.GONE}"
+            android:layout_marginRight="16dp"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="单个金额"
+                android:textColor="@color/black_6"
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_amount"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_marginRight="13dp"
+                android:id="@+id/singleAmount"
+                android:text="@={data.singleAmount}"
+                android:background="@null"
+                android:digits="@string/digits_amount"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:gravity="right"
+                android:hint="0.00"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/symbol"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="元"
+                android:id="@+id/symbol"
+                android:layout_marginRight="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl_num"
+        app:layout_constraintTop_toBottomOf="@+id/rl_amount"
+        android:background="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft= "16dp"
+        android:visibility="@{!data.isSingle? View.VISIBLE : View.GONE}"
+        android:layout_marginRight="16dp"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="红包个数"
+            android:textColor="@color/black_6"
+            android:layout_centerVertical="true"
+            android:id="@+id/red_num"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_marginRight="13dp"
+            android:text="@={data.num}"
+            android:background="@null"
+            android:digits="@string/number"
+            android:id="@+id/num"
+            android:textColor="@color/black"
+            android:inputType="numberDecimal"
+            android:hint="填写个数"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_num"
+            android:textSize="16sp"
+            android:gravity="right"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="个"
+            android:id="@+id/tv_num"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_num"
+            android:background="@color/white"
+            android:id="@+id/luck_card_view"
+            android:layout_marginTop="20dp"
+            android:visibility="@{!data.isSingle? View.VISIBLE : View.GONE}"
+            app:cardCornerRadius="4dp"
+            android:layout_marginRight="16dp"
+            android:layout_height="145dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:textColor="@color/lesserText"
+                    android:layout_marginTop="28dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:textSize="20sp"
+                    android:hint="恭喜发财，大吉大利"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/luck_card_view"
+            android:id="@+id/rl_all_amount"
+            android:visibility="@{!data.isSingle? View.VISIBLE : View.GONE}"
+            android:layout_height="80dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="@{data.allAmountText}"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:layout_marginTop="28dp"
+                android:textSize="36sp"
+                android:id="@+id/symbol2"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <Button
+            android:id="@+id/one"
+            style="@style/YiLinButtonStyle"
+            android:background="@color/buttonColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_view"
+            android:layout_marginEnd="16dp"
+            android:visibility="@{data.isSingle? View.VISIBLE : View.GONE}"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="93dp"
+            android:alpha="@{TextUtils.isEmpty(data.amount) || TextUtils.isEmpty(data.targetWalletId)|| data.isClick ? 0.3f : 1f}"
+            android:elevation="0dp"
+            android:enabled="@{!(TextUtils.isEmpty(data.amount)|| TextUtils.isEmpty(data.targetWalletId) || data.isClick())}"
+            android:onClick="@{data::sure}"
+            android:text="塞钱进红包"
+            android:textSize="@dimen/font_32" />
+        <Button
+            android:id="@+id/luck"
+            style="@style/YiLinButtonStyle"
+            android:background="@color/buttonColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{!data.isSingle? View.VISIBLE : View.GONE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_all_amount"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp"
+            android:alpha="@{TextUtils.isEmpty(data.singleAmount) || TextUtils.isEmpty(data.num)|| data.isClick ? 0.3f : 1f}"
+            android:elevation="0dp"
+            android:enabled="@{!(TextUtils.isEmpty(data.singleAmount)|| TextUtils.isEmpty(data.num) || data.isClick())}"
+            android:onClick="@{data::sure}"
+            android:text="塞钱进红包"
+            android:textSize="@dimen/font_32" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f6f7fB"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/bank_card_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/msg_list_selector_background"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp20"
+        android:paddingRight="@dimen/dp20"
+        app:divider="@drawable/line"
+        app:showDividers="middle">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <TextView
+                android:id="@+id/cardholders_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:drawableLeft="@drawable/icon_xue"
+                android:gravity="center_vertical"
+                android:text="@string/cardholders_name"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/cardholders_name_et"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/cardholders_name_et"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="名字"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/cardholders_name_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <TextView
+                android:id="@+id/bank_card_number_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:drawableLeft="@drawable/icon_xue"
+                android:gravity="center_vertical"
+                android:text="@string/bank_card_number"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/bank_card_number_et"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/bank_card_number_et"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="银行卡"
+                android:inputType="number"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/bank_card_number_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <TextView
+                android:id="@+id/bank_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:drawableLeft="@drawable/icon_xue"
+                android:gravity="center_vertical"
+                android:text="@string/bank_name"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/bank_name_et"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/bank_name_et"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="银行"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/bank_name_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <TextView
+                android:id="@+id/branch_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="支行名称"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/branch_name_et"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/branch_name_et"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="支行(非对公账户可不填)"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/branch_name_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <TextView
+                android:id="@+id/remarks_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="备注信息"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/remarks_et"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/remarks_et"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="备注"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/remarks_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/alipay_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/msg_list_selector_background"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp20"
+        android:paddingRight="@dimen/dp20"
+        app:divider="@drawable/line"
+        app:showDividers="middle">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <TextView
+                android:id="@+id/alipay_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:drawableLeft="@drawable/icon_xue"
+                android:gravity="center_vertical"
+                android:text="支付宝姓名"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/alipay_name_et"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/alipay_name_et"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="名字"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/alipay_name_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <TextView
+                android:id="@+id/alipay_account_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:drawableLeft="@drawable/icon_xue"
+                android:gravity="center_vertical"
+                android:text="支付宝账号"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/alipay_account_et"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/alipay_account_et"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="账号"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/alipay_account_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/dynamic_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/msg_list_selector_background"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp20"
+        android:paddingRight="@dimen/dp20"
+        app:divider="@drawable/line"
+        app:showDividers="middle">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/dynamic_cl1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <ImageView
+                android:id="@+id/dynamic_iv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_xue"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dynamic_tv1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="@string/cardholders_name"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_iv1"
+                app:layout_constraintRight_toLeftOf="@+id/dynamic_et1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/dynamic_et1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_tv1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/dynamic_cl2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <ImageView
+                android:id="@+id/dynamic_iv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_xue"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/dynamic_tv2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="@string/bank_card_number"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_iv2"
+                app:layout_constraintRight_toLeftOf="@+id/dynamic_et2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/dynamic_et2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_tv2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/dynamic_cl3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <ImageView
+                android:id="@+id/dynamic_iv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_xue"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dynamic_tv3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="@string/bank_name"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_iv3"
+                app:layout_constraintRight_toLeftOf="@+id/dynamic_et3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/dynamic_et3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_tv3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/dynamic_cl4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <ImageView
+                android:id="@+id/dynamic_iv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_xue"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dynamic_tv4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="支行名称"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_iv4"
+                app:layout_constraintRight_toLeftOf="@+id/dynamic_et4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/dynamic_et4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_tv4"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/dynamic_cl5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+            <ImageView
+                android:id="@+id/dynamic_iv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_xue"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dynamic_tv5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="备注信息"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_iv5"
+                app:layout_constraintRight_toLeftOf="@+id/dynamic_et5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/dynamic_et5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/search_color_cancle"
+                android:textSize="@dimen/sp_15_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintLeft_toRightOf="@+id/dynamic_tv5"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <Button
+        android:id="@+id/binding_bt"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_btn_green_blue_10"
+        android:gravity="center"
+        android:text="绑定"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/head_for_add_label"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/msg_list_selector_background_ripple"
+              android:descendantFocusability="blocksDescendants"
+              android:orientation="horizontal"
+              android:gravity="center"
+              android:layout_marginTop="12dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp">
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/icon_add"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:gravity="center_vertical"
+        android:text="@string/create_tag"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:textColor="@color/color_8F9CBB"
+        android:textSize="@dimen/pop_window"/>
+
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_white"
+                android:orientation="vertical">
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/discover_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-2dp"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawableEnd="@drawable/default_ptr_rotate"
+        ptr:ptrDrawableStart="@drawable/default_ptr_flip"
+        ptr:ptrHeaderTextColor="@color/black"
+        ptr:ptrMode="both"
+        ptr:ptrOverScroll="false"
+        ptr:ptrScrollingWhileRefreshingEnabled="true"
+        ptr:ptrShowIndicator="false"/>
+
+    <TextView
+        android:id="@+id/load_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/loading"
+        android:textColor="@color/Grey_600"
+        android:textSize="@dimen/BigTextSize"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/placeholder_v"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="0dp"
+        app:contentInsetStart="0dp"
+        android:layout_below="@+id/placeholder_v"
+        >
+
+        <RelativeLayout
+            android:id="@+id/tool_bar_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <com.iimm.miliao.view.CheckableImageView
+                android:id="@+id/iv_title_left"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/checkable_back"
+                />
+
+            <TextView
+                android:id="@+id/tv_title_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="middle"
+                android:maxWidth="200dp"
+                android:singleLine="true"
+                android:text="朋友圈"
+                android:textColor="@color/tool_bar_text_color"
+                android:textSize="@dimen/title_center_text_size"
+               />
+
+            <com.iimm.miliao.view.CheckableImageView
+                android:id="@+id/iv_title_right_right"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toLeftOf="@+id/iv_title_right"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/checkable_search"
+                android:visibility="invisible"
+                />
+
+            <com.iimm.miliao.view.CheckableImageView
+                android:id="@+id/iv_title_right"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/checkable_camera"
+                />
+            <View
+                android:id="@+id/line_v"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_color"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+</RelativeLayout>

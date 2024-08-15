@@ -1,0 +1,97 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        compile_version = 28
+        min_version = 21
+        target_version = 28
+        support_version = '28.0.0'
+    }
+    ext.kotlin_version = "1.7.20"
+    ext.glide_version = '4.0.0'
+    ext.base_rvadapter_version = '3.0.2'
+    ext.eventbus_version = '3.0.0'
+    ext.fastjson_version = '1.2.3'
+    ext.rxandroid_version = '2.0.1'
+    ext.reactive_streams_version = '1.0.2'
+    ext.retrofit2_version = '2.3.0'
+    ext.converter_gson_version = '2.3.0'
+    ext.retrofit2_rxjava2_adapter_version = '1.0.0'
+    ext.logging_interceptor_version = '3.8.1'
+    ext.converter_scalars_version = '2.1.0'
+    ext.permission_version = '2.0.0-rc1'
+    ext.constraint_layout_version = '1.1.3'
+    ext.extensions_version = '1.1.1'
+    repositories {
+        //mintegral sdk依赖   引入mintegral sdk需要添加此maven
+        maven {
+            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/"
+        }
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle"
+        }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        mavenCentral()
+        google()
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://github.com/jitsi/jitsi-maven-repository/raw/master/releases' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        maven { url "https://jitpack.io" }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+//        classpath "com.android.tools.build:gradle:7.0.0"
+//        classpath 'com.android.tools.build:gradle:8.0.0' // 更新到适合的最新版本
+        classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+    }
+
+}
+
+allprojects {
+    repositories {
+        //mintegral sdk依赖   引入mintegral sdk需要添加此maven
+        maven {
+            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/"
+        }
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle"
+        }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://github.com/jitsi/jitsi-maven-repository/raw/master/releases' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url 'http://developer.huawei.com/repo/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+
+        // 支付宝 SDK AAR 包所需的配置
+        flatDir {
+            dirs 'libs'
+        }
+
+    }
+
+}

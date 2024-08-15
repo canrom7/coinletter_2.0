@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/catagory_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#F5F7FA"
+        android:paddingLeft="13dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:textColor="#8C9AB8"
+        android:textSize="@dimen/sp_16_text_size" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/white"
+        android:minHeight="64dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="10dp">
+
+        <FrameLayout
+            android:id="@+id/head_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/avatar_img"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/rounded_avatar_margin"
+                android:layout_marginBottom="@dimen/rounded_avatar_margin"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar_normal"
+                android:visibility="visible"
+                app:riv_border_color="@color/white"
+                app:riv_corner_radius="@dimen/rounded_avatar_corner_radius"
+                app:riv_oval="false" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@id/head_area"
+            android:background="#F0F0F0" />
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toLeftOf="@id/friend_fl"
+            android:layout_toRightOf="@id/v_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/contact_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="middle"
+                android:paddingBottom="2dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/one_level_title" />
+
+            <TextView
+                android:id="@+id/user_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="middle"
+                android:paddingTop="2dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/Grey_600"
+                android:textSize="@dimen/sp_13_text_size" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/friend_fl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <Button
+                android:id="@+id/is_friend_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingLeft="9dp"
+                android:paddingTop="5dp"
+                android:paddingRight="9dp"
+                android:paddingBottom="5dp"
+                android:text="@string/added"
+                android:textColor="@color/Grey_700"
+                android:textSize="@dimen/sp_12_text_size"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/is_not_friend_btn"
+                style="@style/OKBtn_Small"
+                android:layout_width="56dp"
+                android:height="28dp"
+                android:background="@drawable/bg_btn_circle"
+                android:text="@string/add_to"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:visibility="visible" />
+        </FrameLayout>
+
+        <CheckBox
+            android:id="@+id/check_box"
+            style="@style/CustomCheckBoxTheme_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:visibility="gone"
+            tools:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/msg_list_selector_background_ripple"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+       >
+
+        <TextView
+            android:id="@+id/department_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#3A404C"
+            android:textSize="15sp"
+            android:text="@string/remark" />
+
+        <com.iimm.miliao.view.ClearEditText
+            android:id="@+id/department_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/remark_edit_ios"
+            android:hint="@string/add_a_note_name"
+            android:inputType="text"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:gravity="right"
+            android:maxLength="30"
+            android:text=""
+            android:textColor="#333333"
+            android:textColorHint="#BAC3D5"
+            android:textSize="@dimen/one_level_title" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/msg_list_selector_background_ripple"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="12dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#3A404C"
+            android:textSize="15sp"
+            android:text="@string/tag" />
+
+        <RelativeLayout
+            android:id="@+id/rlLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_setting_label"
+                style="@style/IMTbleLine_TextKey"
+                android:layout_width="match_parent"
+                android:background="@drawable/remark_edit"
+                android:gravity="right"
+                android:paddingLeft="12dp"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:text="@string/remark_tag" />
+
+            <ImageView
+                android:id="@+id/name_arrow_img3"
+                style="@style/IMTbleLine_ArrowImg"
+                android:layout_width="7dp"
+                android:layout_height="12dp"
+                android:src="@drawable/set_right"
+                android:contentDescription="@string/app_name"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="12dp"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/msg_list_selector_background_ripple">
+
+        <TextView
+            android:id="@+id/tvDescribe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/describe" />
+
+        <com.iimm.miliao.view.ClearEditText
+            android:id="@+id/etDescribe"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginRight="12dp"
+            android:paddingTop="8dp"
+            android:background="@drawable/remark_edit_ios"
+            android:hint="@string/add_more_note_information"
+            android:inputType="text"
+            android:gravity="left"
+            android:text=""
+            android:textColor="#333333"
+            android:textColorHint="#BAC3D5"
+            android:textSize="@dimen/one_level_title" />
+
+    </LinearLayout>
+
+</LinearLayout>

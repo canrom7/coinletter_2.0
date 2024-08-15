@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp55"
+    android:background="@drawable/round_withe_storek_10"
+    android:layout_marginLeft="@dimen/dp10"
+    android:layout_marginRight="@dimen/dp10"
+    android:layout_marginTop="@dimen/dp12">
+
+
+    <TextView
+        android:id="@+id/department_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/wx_group"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/dp10"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:background="@drawable/wx_group" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_8F9CBB"
+            android:textSize="@dimen/sp_16_text_size"
+            android:layout_marginLeft="@dimen/dp5"
+            android:text="部门群"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+</LinearLayout>

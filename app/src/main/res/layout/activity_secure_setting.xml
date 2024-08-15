@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:background="@color/color_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/msg_list_selector_background_ripple">
+
+        <RelativeLayout
+            android:id="@+id/tvDeviceLock_rl"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp55"
+            android:paddingLeft="@dimen/dp20"
+            android:paddingRight="@dimen/dp12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvDeviceLock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/enable_device_lock"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"/>
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/sbDeviceLock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_background="@color/app_white"
+                app:sb_checked_color="@color/color_00"
+                app:sb_enable_effect="false"
+                app:sb_shadow_radius="4dp"
+                app:sb_show_indicator="false" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llDeviceLockDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeviceLock_rl">
+
+            <RelativeLayout
+                android:id="@+id/rlChangeDeviceLockPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color"/>
+
+                <TextView
+                    android:id="@+id/tvChangeDeviceLockPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/change_device_lock_password"
+                    android:textColor="@color/Grey_3A4"
+                    android:textSize="@dimen/sp_15_text_size"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color"/>
+
+                <TextView
+                    android:id="@+id/tvDeviceLockFree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/tip_device_lock_free"
+                    android:textColor="@color/Grey_3A4"
+                    android:textSize="@dimen/sp_15_text_size"/>
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sbDeviceLockFree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_enable_effect="false"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/bind_account_rl"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llDeviceLockDetail">
+
+            <View
+                android:id="@+id/bind_account_v"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/line_color"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="@string/bind_account_set"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"/>
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/set_right"
+                android:contentDescription="@string/app_name"/>
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/msg_list_selector_background_ripple"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/payword_update"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llDeviceLockDetail">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="修改支付密码"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"/>
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/set_right"
+                android:contentDescription="@string/app_name"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_color"/>
+
+        <RelativeLayout
+            android:id="@+id/payword_forgotpw"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llDeviceLockDetail">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="忘记支付密码"
+                android:textColor="@color/Grey_3A4"
+                android:textSize="@dimen/sp_15_text_size"/>
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/set_right"
+                android:contentDescription="@string/app_name"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/secure_setting_security_question_rl"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="@dimen/dp10"
+        android:visibility="visible"
+        android:background="@drawable/msg_list_selector_background_ripple"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="@string/security_question"
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_15_text_size"/>
+
+        <TextView
+            android:id="@+id/secure_setting_security_question_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp12"
+            tools:text="@string/about_me"
+            android:textColor="@color/color_96"
+            android:textSize="@dimen/sp_15_text_size"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/secure_setting_security_question_iv"/>
+
+        <ImageView
+            android:id="@+id/secure_setting_security_question_iv"
+            android:layout_width="7dp"
+            android:layout_height="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/set_right"
+            android:contentDescription="@string/app_name"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/catagory_title"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="#F5F7FA"
+        android:gravity="center_vertical"
+        android:paddingLeft="13dp"
+        android:textColor="#8C9AB8"
+        android:textSize="@dimen/sp_16_text_size"
+        tools:text="A" />
+
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <com.iimm.miliao.view.CircleImageView
+            android:id="@+id/set_manager_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/avatar_normal" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="@dimen/line_height"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@id/set_manager_iv"
+            android:background="@color/line_color" />
+
+
+        <TextView
+            android:id="@+id/set_manager_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@+id/line"
+            android:text=""
+            android:textSize="@dimen/me_title_size" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/roles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/group_owner"
+            android:textColor="@color/color_8F9CBB"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color" />
+
+</LinearLayout>

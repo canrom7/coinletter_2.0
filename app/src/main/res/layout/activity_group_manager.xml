@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/transfer_group_rl"
+                    style="@style/table_item_rl">
+
+                    <TextView
+                        android:id="@+id/transfer_group_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/transfer_group_owner"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/one_level_title" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_list_next"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color" />
+
+
+                <RelativeLayout
+                    android:id="@+id/set_manager_rl"
+                    style="@style/table_item_rl">
+
+                    <TextView
+                        android:id="@+id/set_manager_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/design_admin"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/one_level_title" />
+
+                    <ImageView
+                        android:id="@+id/set_manager_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_list_next"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+
+                <View
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color" />
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/set_invisible_rl"
+                    style="@style/table_item_rl">
+
+                    <TextView
+                        android:id="@+id/set_invisible_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/set_invisible"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/one_level_title" />
+
+                    <ImageView
+                        android:id="@+id/set_invisible_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_list_next"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/set_guardian_rl"
+                    style="@style/table_item_rl"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/set_guardian_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/set_guardian"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/one_level_title" />
+
+                    <ImageView
+                        android:id="@+id/set_guardian_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_list_next"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/group_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/round_withe_storek_10">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp55"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="群签到"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/one_level_title" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/sb_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        app:sb_background="@color/app_white"
+                        app:sb_checked_color="@color/color_00"
+                        app:sb_effect_duration="100"
+                        app:sb_shadow_radius="4dp"
+                        app:sb_show_indicator="false" />
+
+                </RelativeLayout>
+                <View
+                    android:id="@+id/sign_history_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color"
+                    android:visibility="gone" />
+                <RelativeLayout
+                    android:id="@+id/sign_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:paddingLeft="@dimen/dp20"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="签到记录"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/one_level_title" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_list_next"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/set_remarks_rl"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="@dimen/dp12"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/set_remark_for_room_member"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/one_level_title" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/set_list_next"
+                    android:contentDescription="@string/app_name" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_look"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/private_group"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/one_level_title" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_look"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_private_group"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_read"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/display_read_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/one_level_title" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_read"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:visibility="gone"
+                style="@style/group_manage_hint"
+                android:text="@string/hint_display_readed_number" />
+
+            <RelativeLayout
+                android:id="@+id/rl_group_verify"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/invitation_confirmation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/one_level_title" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_verify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/need_to_be_confirmed" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_show_member"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/display_member"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/one_level_title" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_show_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_desplay_member" />
+
+            <RelativeLayout
+                android:id="@+id/rl_allow_chat"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/member_chat_privately"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/me_title_size" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_allow_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_member_chat_privately" />
+
+            <RelativeLayout
+                android:id="@+id/rl_allow_invite"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/member_invite_friends"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/me_title_size" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_allow_invite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_member_invite_friends" />
+
+            <RelativeLayout
+                android:id="@+id/rl_allow_upload"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/member_upload"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/me_title_size" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_allow_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_member_upload" />
+
+            <RelativeLayout
+                android:id="@+id/rl_allow_conference"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/member_meetings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/me_title_size" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_allow_conference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_member_meetings" />
+
+            <RelativeLayout
+                android:id="@+id/rl_allow_send_course"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/member_course"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/me_title_size" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_allow_send_course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_member_course" />
+
+            <RelativeLayout
+                android:id="@+id/rl_group_notify"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/remove_member_notify"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/one_level_title" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_notify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/tip_exit_group_notify"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_allow_strong_remind"
+                style="@style/table_item_rl"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/strong_remind"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/one_level_title" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_allow_strong_remind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    app:sb_background="@color/app_white"
+                    app:sb_checked_color="@color/color_00"
+                    app:sb_effect_duration="100"
+                    app:sb_shadow_radius="4dp"
+                    app:sb_show_indicator="false" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/group_manage_hint"
+                android:text="@string/hint_strong_remind" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="44dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

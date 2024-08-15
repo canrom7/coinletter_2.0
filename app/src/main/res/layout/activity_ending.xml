@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.payeasenet.wepay.ui.viewModel.StartModel" />
+    </data>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        tools:context=".ui.activity.StartActivity">
+
+        <include layout="@layout/toolbar"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rl"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_success" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/buttonColor"
+                android:textSize="20sp"
+                android:id="@+id/content"
+                android:text="充值成功"
+                android:layout_below="@+id/iv"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="预计2小时内到账"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/content"
+                android:id="@+id/time"
+                android:layout_centerVertical="true"
+                android:textColor="@color/lesserText"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text=""
+                android:visibility="gone"
+                android:layout_marginTop="18dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/time"
+                android:id="@+id/amount1"
+                android:textSize="28sp"
+                android:layout_marginBottom="40dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@+id/time"
+                android:layout_height="30dp"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/view"
+            android:background="@color/white_d0"
+            android:layout_height="1px"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/rl_amount"
+            android:layout_marginRight="16dp"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="充值金额"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_amount"
+                android:layout_centerVertical="true"
+                android:textColor="@color/lesserText"
+                android:layout_height="wrap_content"/>
+            <TextView
+            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:id="@+id/amount"
+            android:layout_centerVertical="true"
+            android:textColor="@color/lesserText"
+            android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_amount"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/rl_pay_way"
+            android:visibility="gone"
+            android:layout_marginRight="16dp"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="充值方式"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/lesserText"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text=""
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:id="@+id/pay_way"
+                android:layout_centerVertical="true"
+                android:textColor="@color/lesserText"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <Button
+            android:id="@+id/finish"
+            style="@style/YiLinButtonStyle"
+            android:background="@color/buttonColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_pay_way"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:text="完成"
+            android:textSize="@dimen/font_32" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

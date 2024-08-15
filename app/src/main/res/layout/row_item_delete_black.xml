@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/delete_ll"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/catagory_v"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="#F5F7FA"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:textColor="#8C9AB8"
+        android:textSize="@dimen/sp_16_text_size"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/delete_tv"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:background="@color/redpacket_bg"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="@string/remove_blacklist"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16_text_size"/>
+
+</LinearLayout>
+
+

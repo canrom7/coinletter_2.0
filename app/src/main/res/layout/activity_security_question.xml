@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include
+        android:id="@+id/secure_setting_toobar"
+        layout="@layout/a_view_actionbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/secure_setting_view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secure_setting_toobar"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_bg"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secure_setting_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp40">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp12"
+                android:layout_marginRight="@dimen/dp10"
+                android:text="@string/password_can_be_changed_by_secret_security_question"
+                android:textColor="@color/color_96"
+                android:textSize="@dimen/sp_14_text_size"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="@string/question_one"
+                android:textColor="@color/color_8F9CBB"
+                android:textSize="@dimen/sp_14_text_size"
+                />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/security_question_spinner_one"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/spinner_drop_down_shape"
+                android:popupBackground="@drawable/msg_list_selector_background_ripple"
+                android:spinnerMode="dropdown"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secure_setting_view"
+                />
+
+            <com.iimm.miliao.view.ClearEditText
+                android:id="@+id/security_question_one_et"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp12"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/msg_list_selector_background"
+                android:gravity="center_vertical"
+                android:hint="@string/please_enter_the_answer"
+                android:paddingLeft="@dimen/dp20"
+                android:paddingRight="@dimen/dp20"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/message_time"
+                android:textSize="@dimen/sp_15_text_size"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="@string/question_two"
+                android:textColor="@color/color_8F9CBB"
+                android:textSize="@dimen/sp_14_text_size"
+                />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/security_question_spinner_two"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/spinner_drop_down_shape"
+                android:popupBackground="@drawable/msg_list_selector_background"
+                android:spinnerMode="dropdown"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secure_setting_view"
+                />
+
+            <com.iimm.miliao.view.ClearEditText
+                android:id="@+id/security_question_two_et"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp12"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/msg_list_selector_background"
+                android:gravity="center_vertical"
+                android:hint="@string/please_enter_the_answer"
+                android:paddingLeft="@dimen/dp20"
+                android:paddingRight="@dimen/dp20"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/message_time"
+                android:textSize="@dimen/sp_15_text_size"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="@string/question_three"
+                android:textColor="@color/color_8F9CBB"
+                android:textSize="@dimen/sp_14_text_size"
+                />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/security_question_spinner_three"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/spinner_drop_down_shape"
+                android:popupBackground="@drawable/msg_list_selector_background"
+                android:spinnerMode="dropdown"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secure_setting_view"
+                />
+
+            <com.iimm.miliao.view.ClearEditText
+                android:id="@+id/security_question_three_et"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp12"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/msg_list_selector_background"
+                android:gravity="center_vertical"
+                android:hint="@string/please_enter_the_answer"
+                android:paddingLeft="@dimen/dp20"
+                android:paddingRight="@dimen/dp20"
+                android:textColor="@color/Grey_3A4"
+                android:textColorHint="@color/message_time"
+                android:textSize="@dimen/sp_15_text_size"
+                />
+
+            <TextView
+                android:id="@+id/security_question_done"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/shape_transfer"
+                android:gravity="center"
+                android:text="@string/done"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16_text_size"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

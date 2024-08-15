@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_for_shatup"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/six_gag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_selector_background_ripple"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="永久禁言"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Grey_100" />
+
+    <TextView
+        android:id="@+id/five_gag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_selector_background_ripple"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="@string/ban_1w"
+        android:visibility="gone"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:background="@color/Grey_100" />
+
+    <TextView
+        android:id="@+id/four_gag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_selector_background_ripple"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="9dp"
+        android:text="@string/ban_3d"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Grey_100" />
+
+    <TextView
+        android:id="@+id/three_gag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_selector_background_ripple"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="禁言24小时"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Grey_100" />
+
+
+    <TextView
+        android:id="@+id/two_gag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_selector_background_ripple"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="@string/ban_1h"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Grey_100" />
+
+
+    <TextView
+        android:id="@+id/one_gag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_selector_background_ripple"
+        android:gravity="center"
+        android:padding="9dp"
+        android:visibility="gone"
+        android:text="@string/ban_10m"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:background="@color/Grey_100" />
+
+
+    <TextView
+        android:id="@+id/no_gag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="@string/no_ban"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp7"
+        android:background="@color/Grey_100" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="@string/cancel"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/one_level_title" />
+
+
+</LinearLayout>

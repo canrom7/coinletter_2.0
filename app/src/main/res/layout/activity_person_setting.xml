@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/go_basic_rl"
+                style="@style/IMTbleLine"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                android:paddingLeft="20dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp">
+
+                <com.iimm.miliao.view.CircleImageView
+                    android:id="@+id/avatar_"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/avatar_normal"
+                    android:visibility="gone" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/person_avatar"
+                    android:layout_width="@dimen/rounded_avatar_height35"
+                    android:layout_height="@dimen/rounded_avatar_height35"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar_normal"
+                    android:visibility="visible"
+                    app:riv_border_color="@color/white"
+                    app:riv_corner_radius="@dimen/rounded_avatar_corner_radius"
+                    app:riv_oval="false" />
+
+
+                <com.iimm.miliao.view.CircleImageView
+                    android:id="@+id/add_contacts_"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/person_avatar"
+                    android:src="@drawable/bg_room_info_add_btn"
+                    android:visibility="gone" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/add_contacts"
+                    android:layout_width="@dimen/rounded_avatar_height35"
+                    android:layout_height="@dimen/rounded_avatar_height35"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/person_avatar"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_room_info_add_btn"
+                    android:visibility="visible"
+                    app:riv_border_color="@color/white"
+                    app:riv_corner_radius="@dimen/rounded_avatar_corner_radius"
+                    app:riv_oval="false" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/person_avatar"
+                    android:layout_alignLeft="@+id/person_avatar"
+                    android:layout_alignRight="@+id/person_avatar"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="#969696"
+                    android:textSize="@dimen/three_level_content" />
+
+            </RelativeLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple">
+
+                <RelativeLayout
+                    android:id="@+id/remark_rl"
+                    style="@style/IM_setting"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv"
+                        style="@style/IM_setting_txt"
+                        android:text="@string/remark_name" />
+
+                    <TextView
+                        android:id="@+id/remark_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_toLeftOf="@+id/go_set_iv"
+                        android:layout_toRightOf="@+id/tv"
+                        android:ellipsize="end"
+                        android:gravity="right|center_vertical"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/color_96"
+                        android:textSize="@dimen/enter_money" />
+
+                    <ImageView
+                        android:id="@+id/go_set_iv"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:layout_width="7dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_right" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/remark_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/color_F8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/remark_rl" />
+
+                <RelativeLayout
+                    android:id="@+id/label_rl"
+                    style="@style/IM_setting"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/remark_v">
+
+                    <TextView
+                        android:id="@+id/label_tv"
+                        style="@style/IM_setting_txt"
+                        android:text="@string/tag" />
+
+                    <TextView
+                        android:id="@+id/label_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_toLeftOf="@+id/go_set_iv2"
+                        android:layout_toRightOf="@+id/label_tv"
+                        android:gravity="right|center_vertical"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/color_96"
+                        android:textSize="@dimen/money_size" />
+
+                    <ImageView
+                        android:id="@+id/go_set_iv2"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:layout_width="7dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_right" />
+
+                </RelativeLayout>
+            </android.support.constraint.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_transfer"
+                style="@style/IM_setting"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    style="@style/IM_setting_txt"
+                    android:text="@string/view_transfer_history" />
+
+                <ImageView
+                    style="IMTbleLine_ArrowImg"
+                    android:layout_width="7dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/set_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/chat_history_search"
+                style="@style/IM_setting"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple">
+
+                <TextView
+                    style="@style/IM_setting_txt"
+                    android:text="@string/search_chat_content" />
+
+                <ImageView
+                    style="IMTbleLine_ArrowImg"
+                    android:layout_width="7dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/set_right" />
+
+            </RelativeLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple">
+
+                <RelativeLayout
+                    android:id="@+id/sync_chat_history_empty"
+                    style="@style/IM_setting"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/IM_setting_txt"
+                        android:text="@string/sync_chat_clean" />
+
+                    <ImageView
+                        style="IMTbleLine_ArrowImg"
+                        android:layout_width="7dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_right" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/sync_chat_history_empty_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/color_F8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sync_chat_history_empty" />
+
+                <RelativeLayout
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:id="@+id/sb_read_fire_rl"
+                    style="@style/IM_setting"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sync_chat_history_empty_v"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/tv_read_fire_hint"
+                        style="@style/IM_setting_txt"
+                        android:layout_centerVertical="false"
+                        android:paddingTop="17dp"
+                        android:paddingBottom="17dp"
+                        android:text="@string/delete_after_read" />
+
+                    <com.suke.widget.SwitchButton
+                        android:layout_marginRight="12dp"
+                        android:id="@+id/sb_read_fire"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="12dp"
+                        android:clickable="false"
+                        app:sb_background="@color/app_white"
+                        app:sb_checked_color="@color/color_00"
+                        app:sb_effect_duration="100"
+                        app:sb_shadow_radius="4dp"
+                        app:sb_show_indicator="false" />
+
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/tv_fire_time_hint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_read_fire_hint"
+                        android:layout_marginTop="18dp"
+                        android:textSize="12sp"
+                        android:textColor="@color/Grey_3A4"
+                        android:text="消息在 30分钟 后消失"
+                        tools:visibility="visible" />
+
+                    <SeekBar
+                        android:layout_marginBottom="17dp"
+                        android:id="@+id/sb_read_fire_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:progress="50"
+                        android:minHeight="2dp"
+                        android:thumb="@drawable/fire_button"
+                        android:maxHeight="2dp"
+                        android:progressDrawable="@drawable/fire_seekbar_bg"
+                        android:layout_below="@id/tv_fire_time_hint"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginRight="3dp"
+                        tools:visibility="visible" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/sb_read_fire_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/color_F8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sb_read_fire_rl" />
+
+                <RelativeLayout
+                    android:id="@+id/sb_top_chat_rl"
+                    style="@style/IM_setting"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sb_read_fire_v">
+
+                    <TextView
+                        style="@style/IM_setting_txt"
+                        android:paddingTop="17dp"
+                        android:paddingBottom="17dp"
+                        android:text="@string/pined_session" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/sb_top_chat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        app:sb_background="@color/app_white"
+                        app:sb_checked_color="@color/color_00"
+                        app:sb_effect_duration="100"
+                        app:sb_shadow_radius="4dp"
+                        app:sb_show_indicator="false" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/sb_top_chat_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/color_F8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sb_top_chat_rl" />
+
+                <RelativeLayout
+                    android:id="@+id/sb_no_disturb_rl"
+                    style="@style/IM_setting"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sb_top_chat_v">
+
+                    <TextView
+                        android:id="@+id/no_disturb_tv"
+                        style="@style/IM_setting_txt"
+                        android:paddingTop="17dp"
+                        android:paddingBottom="17dp"
+                        android:text="@string/message_avoidance" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/sb_no_disturb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        app:sb_background="@color/app_white"
+                        app:sb_checked_color="@color/color_00"
+                        app:sb_effect_duration="100"
+                        app:sb_shadow_radius="4dp"
+                        app:sb_show_indicator="false" />
+
+                </RelativeLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/set_background_rl"
+                style="@style/IM_setting"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple">
+
+                <TextView
+                    style="@style/IM_setting_txt"
+                    android:text="@string/chat_background" />
+
+                <ImageView
+                    style="@style/IMTbleLine_ArrowImg"
+                    android:layout_width="7dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/set_right" />
+
+            </RelativeLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/msg_list_selector_background_ripple">
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/msg_save_days_rl"
+                    style="@style/IM_setting"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/IM_setting_txt"
+                        android:text="@string/message_auto_delete" />
+
+                    <TextView
+                        android:id="@+id/msg_save_days_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="9dp"
+                        android:layout_toLeftOf="@+id/msg_save_days_iv"
+                        android:text="@string/one_day"
+                        android:textColor="@color/color_96"
+                        android:textSize="@dimen/one_level_title" />
+
+                    <ImageView
+                        android:id="@+id/msg_save_days_iv"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:layout_width="7dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_right" />
+
+                </RelativeLayout>
+
+                <View
+                    android:visibility="gone"
+                    android:id="@+id/msg_save_days_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/color_F8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/msg_save_days_rl" />
+
+                <RelativeLayout
+                    android:id="@+id/chat_history_empty"
+                    style="@style/IM_setting"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/msg_save_days_v">
+
+                    <TextView
+                        style="@style/IM_setting_txt"
+                        android:text="@string/clean_chat_history" />
+
+                    <ImageView
+                        android:id="@+id/chat_history_empty_iv"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:layout_width="7dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/set_right" />
+                </RelativeLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

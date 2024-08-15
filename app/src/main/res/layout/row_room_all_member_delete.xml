@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/catagory_title"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="@color/chat_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:textColor="@color/my_tab_no_select_tv_color"
+        android:textSize="@dimen/sp_16_text_size"
+        tools:text="A" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/list_selector_background_ripple"
+        android:minHeight="60dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp">
+        <com.iimm.miliao.view.HeadView
+            android:id="@+id/avatar_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar_normal"
+            android:visibility="visible"
+            app:riv_border_color="@color/white"
+            app:riv_corner_radius="@dimen/rounded_avatar_corner_radius"
+            app:riv_oval="false"/>
+
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="@dimen/line_height"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@id/avatar_img"
+            android:background="@color/line_color" />
+
+        <TextView
+            android:layout_alignTop="@id/avatar_img"
+            android:id="@+id/user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_toRightOf="@id/v_line"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:layout_toLeftOf="@+id/check_box"
+            tools:text="谁离开房间首付款"
+            android:text=""
+            android:textColor="@color/Grey_3A4"
+            android:textSize="@dimen/sp_16_text_size" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/user_name_tv"
+            android:id="@+id/tv_login_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_toRightOf="@id/v_line"
+            android:ellipsize="end"
+            android:singleLine="true"
+            tools:text="2小时前在线"
+            android:text=""
+            android:textColor="@color/color_96"
+            android:textSize="@dimen/sp_12_text_size" />
+
+        <CheckBox
+            android:id="@+id/check_box"
+            style="@style/CustomCheckBoxTheme_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:focusable="false" />
+    </RelativeLayout>
+
+</LinearLayout>

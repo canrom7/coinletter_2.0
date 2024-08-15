@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChattingRightStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/time_tv"
+        style="@style/ChattingTimeStyle"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <com.iimm.miliao.view.HeadView
+        android:id="@+id/chat_head_iv"
+        style="@style/ChattingRightAvatarStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/app_name" />
+
+    <RelativeLayout
+        style="@style/ChattingRightContentStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toLeftOf="@id/chat_head_iv">
+
+        <TextView
+            android:id="@+id/nick_name"
+            style="@style/ChattingRightNickNameStyle"
+            android:visibility="gone"
+            tools:text="sdfsdfs"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/chat_warp_view"
+            style="@style/ChattingRightContentTextStyle"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_below="@id/nick_name"
+            android:visibility="visible">
+
+            <!--<fm.jiecao.jcvideoplayer_lib.JVCideoPlayerStandardforchat-->
+            <!--android:id="@+id/chat_jcvideo"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <!--</fm.jiecao.jcvideoplayer_lib.JVCideoPlayerStandardforchat>-->
+
+            <com.iimm.miliao.view.ChatImageView
+                android:id="@+id/chat_jcvideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_gray"
+                app:riv_corner_radius="6dp"
+                app:riv_mutate_background="true" />
+
+            <ImageView
+                android:id="@+id/iv_start"
+                android:layout_width="@dimen/jc_start_button_w_h_normal"
+                android:layout_height="@dimen/jc_start_button_w_h_normal"
+                android:layout_centerInParent="true"
+                android:src="@drawable/jc_click_play_selector" />
+
+            <com.iimm.miliao.view.XuanProgressPar
+                android:id="@+id/img_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_invalid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_start"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:text="视频已失效"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/view_holder_state_from" />
+        <include layout="@layout/from_time_down_icon" />
+
+        <ImageView
+            android:id="@+id/chat_upload_cancel_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@id/chat_warp_view"
+            android:layout_alignBottom="@id/chat_warp_view"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@id/chat_warp_view"
+            android:padding="5dp"
+            android:src="@drawable/icon_close"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/chat_msc"
+        android:layout_marginLeft="5dp"
+        style="@style/CustomCheckBoxTheme_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chat_head_iv"
+        android:clickable="false"
+        android:visibility="visible" />
+
+</RelativeLayout>

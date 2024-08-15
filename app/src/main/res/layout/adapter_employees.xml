@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/white"
+    android:id="@+id/item">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/head"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_border_width="1dp"
+        app:riv_border_color="#EEF0F5"
+        android:src="@drawable/call_normal_av" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        android:textColor="@color/Grey_3A4"
+        android:textSize="@dimen/sp_16_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/position"
+        app:layout_constraintStart_toEndOf="@+id/head"
+        app:layout_constraintTop_toTopOf="@+id/head" />
+
+    <TextView
+        android:id="@+id/position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
+        android:textSize="@dimen/sp_12_text_size"
+        android:textColor="@color/group_manage_hint_color"
+        app:layout_constraintBottom_toBottomOf="@+id/head"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/identity"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp20"
+        android:layout_marginStart="12dp"
+        android:paddingLeft="@dimen/dp10"
+        android:paddingRight="@dimen/dp10"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="管理"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@drawable/ellipse_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.1dp"
+        android:background="@color/chat_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

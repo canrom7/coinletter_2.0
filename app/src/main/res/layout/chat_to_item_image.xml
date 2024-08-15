@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChattingLeftStyle"
+    >
+
+    <TextView
+        android:id="@+id/time_tv"
+        style="@style/ChattingTimeStyle"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <com.iimm.miliao.view.HeadView
+        android:id="@+id/chat_head_iv"
+        style="@style/ChattingLeftAvatarStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_msc"
+        android:contentDescription="@string/app_name" />
+
+    <CheckBox
+        android:id="@+id/chat_msc"
+        style="@style/CustomCheckBoxTheme_new"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chat_head_iv"
+        android:clickable="false"
+        tools:visibility="visible"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        style="@style/ChattingLeftContentStyle"
+        android:layout_below="@id/time_tv"
+        android:layout_toRightOf="@id/chat_head_iv">
+
+        <TextView
+            android:id="@+id/nick_name"
+            style="@style/ChattingLeftNickNameStyle"
+            android:visibility="gone"
+            tools:text="sdfsdfs"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/chat_warp_view"
+            style="@style/ChattingLeftContentTextStyle"
+            android:layout_below="@id/nick_name"
+            android:layout_toRightOf="@id/chat_head_iv">
+
+            <com.iimm.miliao.view.XuanProgressPar
+                android:id="@+id/img_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/chat_gif_view"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+        <include layout="@layout/from_time_down_icon" />
+        <include layout="@layout/view_holder_state_to" />
+    </RelativeLayout>
+</RelativeLayout>

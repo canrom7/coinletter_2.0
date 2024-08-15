@@ -1,0 +1,271 @@
+<com.iimm.miliao.view.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:background="@color/chat_bg"
+                                    android:fitsSystemWindows="true"
+                                    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_avatar_img"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/avatar_img"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY"
+                    app:riv_oval="true"
+                    android:src="@drawable/avatar_normal" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/set_avatar"
+                    android:textColor="@color/color_96"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    style="@style/IMTbleLine_ArrowImg"
+                    android:layout_marginLeft="8dp"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/msg_list_selector_background"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    style="@style/IMTbleLine_UP"
+                    android:layout_height="55dp"
+                    android:background="@null">
+
+                    <TextView
+                        android:id="@+id/name_text"
+                        style="@style/IMTbleLine_TextKey"
+                        android:drawablePadding="5dp"
+                        android:text="@string/name_align"
+                        android:textColor="@color/Grey_3A4" />
+
+                    <com.iimm.miliao.view.ClearEditText
+                        android:id="@+id/name_edit"
+                        style="@style/IMTbleLine_TextValue"
+                        android:layout_toLeftOf="@+id/name_arrow_img"
+                        android:layout_toRightOf="@+id/name_text"
+                        android:background="@null"
+                        android:hint="@string/please_input_name"
+                        android:inputType="text"
+                        android:textColor="@color/color_96"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/name_arrow_img"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:contentDescription="@string/app_name"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color" />
+
+
+                <RelativeLayout
+                    android:id="@+id/sex_select_rl"
+                    style="@style/IMTbleLine_UP"
+                    android:layout_height="55dp"
+                    android:background="@null">
+
+                    <TextView
+                        android:id="@+id/sex_text"
+                        style="@style/IMTbleLine_TextKey"
+                        android:drawablePadding="5dp"
+                        android:text="@string/sex_align"
+                        android:textColor="@color/Grey_3A4" />
+
+                    <LinearLayout
+                        android:id="@+id/sex_cl"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/shape_info_bg">
+                        <TextView
+                            android:id="@+id/sex_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="男" />
+                        <TextView
+                            android:id="@+id/girl_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="女" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color" />
+
+                <RelativeLayout
+                    android:id="@+id/birthday_select_rl"
+                    style="@style/IMTbleLine_UP"
+                    android:layout_height="55dp"
+                    android:background="@null"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/birthday_text"
+
+                        style="@style/IMTbleLine_TextKey"
+                        android:drawablePadding="5dp"
+                        android:text="@string/birthday"
+                        android:textColor="@color/Grey_3A4" />
+
+                    <TextView
+                        android:id="@+id/birthday_tv"
+                        style="@style/IMTbleLine_TextValue"
+                        android:layout_toLeftOf="@+id/birthday_arrow_img"
+                        android:layout_toRightOf="@+id/birthday_text" />
+
+                    <ImageView
+                        android:id="@+id/birthday_arrow_img"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/line_color" />
+
+                <RelativeLayout
+                    android:id="@+id/city_select_rl"
+                    style="@style/IMTbleLine_UP"
+                    android:layout_height="55dp"
+                    android:background="@null"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/city_text"
+                        style="@style/IMTbleLine_TextKey"
+                        android:drawablePadding="5dp"
+                        android:text="@string/residence_align"
+                        android:textColor="@color/Grey_3A4" />
+
+                    <TextView
+                        android:id="@+id/city_tv"
+                        style="@style/IMTbleLine_TextValue"
+                        android:layout_toLeftOf="@+id/city_arrow_img"
+                        android:layout_toRightOf="@+id/city_text" />
+
+                    <ImageView
+                        android:id="@+id/city_arrow_img"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/llInvitationCode"
+                    style="@style/IMTbleLine_UP"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/etInvitationCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:digits="@string/alphabet_and_number"
+                        android:hint="@string/hint_invitation_code"
+                        android:singleLine="true"
+                        android:textColor="@color/dark_dark_grey"
+                        android:textSize="@dimen/one_level_title" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/secure_setting_select_rl"
+                    style="@style/IMTbleLine_UP"
+                    android:layout_height="55dp"
+                    android:background="@null"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_height"
+                        android:background="@color/line_color" />
+                    <TextView
+                        android:id="@+id/secure_setting_text"
+                        style="@style/IMTbleLine_TextKey"
+                        android:drawablePadding="5dp"
+                        android:paddingLeft="@dimen/dp20"
+                        android:text="@string/security_question"
+                        android:textColor="@color/Grey_3A4" />
+
+                    <TextView
+                        android:id="@+id/secure_setting_tv"
+                        style="@style/IMTbleLine_TextValue"
+                        android:layout_toLeftOf="@+id/secure_setting_img"
+                        android:layout_toRightOf="@+id/secure_setting_text" />
+
+                    <ImageView
+                        android:id="@+id/secure_setting_img"
+                        style="@style/IMTbleLine_ArrowImg"
+                        android:layout_marginRight="27dp"
+                        android:contentDescription="@string/app_name" />
+
+                </RelativeLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/next_step_btn"
+                style="@style/BossGreenBtn"
+                android:background="@drawable/selector_blue_gray_enable"
+                android:layout_below="@+id/ls"
+                android:textSize="16sp"
+                android:enabled="false"
+                android:textColor="@color/textcolor_withe_black_enable"
+                android:text="@string/sure" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</com.iimm.miliao.view.MyLinearLayout>

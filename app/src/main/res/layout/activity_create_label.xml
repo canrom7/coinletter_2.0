@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/chat_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="12dp"
+        android:background="@drawable/msg_list_selector_background_ripple">
+
+        <TextView
+            android:id="@+id/label_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/tag_name"
+            android:textColor="@color/msg_list_text_color"
+            android:textSize="@dimen/BigTextSize"
+            android:paddingBottom="17dp"
+            android:paddingTop="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/label_name_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:hint="@string/hint_tag_name"
+            android:textColor="@color/color_96"
+            android:textColorHint="@color/color_bac"
+            android:textSize="@dimen/BigTextSize"
+            android:paddingLeft="10dp"
+            android:gravity="right"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/label_name_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/label_user_size"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="9dp"
+        android:text="@string/example_tag_member"
+        android:textColor="@color/Grey_600"
+        android:textSize="@dimen/NormalTextSize"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/add_label_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:background="@drawable/msg_list_selector_background_ripple"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="9dp"
+            android:src="@drawable/icon_add"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:gravity="center_vertical"
+            android:text="@string/add_member"
+            android:textColor="@color/color_8F9CBB"
+            android:textSize="@dimen/sp_15_text_size"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:textColor="@color/Grey_600"/>
+
+    <com.iimm.miliao.view.PullToRefreshSlideListView
+        android:id="@+id/pull_refresh_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ptrAnimationStyle="flip"
+        app:ptrDrawableEnd="@drawable/default_ptr_rotate"
+        app:ptrDrawableStart="@drawable/default_ptr_flip"
+        app:ptrHeaderTextColor="@color/black"
+        app:ptrMode="both"
+        app:ptrOverScroll="false"
+        app:ptrScrollingWhileRefreshingEnabled="true"
+        app:ptrShowIndicator="false"
+        app:slideMode="right"
+        app:slideRightAction="reveal"/>
+
+</LinearLayout>

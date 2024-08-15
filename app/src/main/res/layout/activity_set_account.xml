@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chat_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/msg_list_selector_background_ripple"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/a_avatar_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:src="@drawable/avatar_normal" />
+
+            <TextView
+                android:id="@+id/a_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/sp_18_text_size"
+                tools:text="驻美国大使馆大使" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/a_input_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15"
+            android:padding="@dimen/dp10"
+            android:singleLine="true"
+            android:maxLength="16"
+            android:background="@drawable/et_search_dialog_bg"
+            android:digits="@string/digits" />
+
+        <TextView
+            android:id="@+id/easy_account_single_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:textColor="@color/Grey_600"
+            android:textSize="@dimen/sp_12_text_size" />
+
+        <Button
+            android:id="@+id/a_sure_btn"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_below="@+id/ls"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_transfer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16_text_size"
+            android:text="@string/sure" />
+
+    </LinearLayout>
+
+</LinearLayout>

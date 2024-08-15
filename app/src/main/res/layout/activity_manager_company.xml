@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/linearLayout3"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/empty_team"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/chat_bg"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/no_colleagues"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.68" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="你还没有加入团队哦~"
+            android:textSize="@dimen/sp_16_text_size"
+            android:textColor="@color/color_8F9CBB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <Button
+            android:id="@+id/creat_team"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="24dp"
+            android:text="创建团队"
+            android:background="@drawable/round_bt_bg"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintWidth_percent="0.39" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/companyRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/chat_bg"/>
+
+</LinearLayout>
